@@ -22,7 +22,7 @@
 - Extractos autorizados: pendiente.
 - Reseñas: pendiente.
 - Notas y entrevistas: pendiente.
-- Enlaces de compra: pendiente.
+- Enlace de compra: incorporado de forma provisional para probar el flujo.
 - Instagram: https://www.instagram.com/ale_rorh/
 - Datos de contacto: pendiente.
 - Preferencias estéticas: pendiente.
@@ -38,12 +38,12 @@
 
 ## 4. Arquitectura
 
-- Inicio: identidad inmediata del autor + obra principal.
-- Autor: biografía y trayectoria.
-- Obra: ficha de *Enigma*.
-- Prensa / actividad: presentaciones y futuras notas.
-- FAQ: desambiguación del autor y obra.
-- Contacto: pendiente de datos oficiales.
+- Producto probado: Web Nivel 1.
+- Página 1 / Inicio: autor + obra principal + enlace de compra + biografía.
+- Página 2 / Actividad: presentaciones y recorrido público + contacto.
+- Navegación superior: nombre del autor como regreso al Inicio + Actividad + Contacto.
+- Contacto: ancla dentro de la segunda página.
+- Criterio: mantener la web compacta sin perder identidad, venta ni trayectoria básica.
 
 ## 5. SEO / AEO
 
