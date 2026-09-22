@@ -44,7 +44,7 @@ export const site = {
     {
       title: 'Presentación de Enigma',
       source: 'Biblioteca Popular Almafuerte · Rafael Castillo',
-      url: 'https://www.instagram.com/p/DcWUFv3vygW/',
+      url: 'https://www.instagram.com/p/DcWUEv3vygW/',
       description:
         'Presentación de la novela en la Biblioteca Popular Almafuerte de Rafael Castillo, con actividad libre y gratuita.',
     },
