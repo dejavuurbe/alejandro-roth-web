@@ -43,19 +43,23 @@ import SocialIcon from '../components/SocialIcon.astro';
         <p class="eyebrow">Contacto</p>
         <h2>Canales públicos</h2>
         <p class="lead">
-          Para conocer novedades, presentaciones y actividad pública de Alejandro Roth,
-          consulta sus canales oficiales disponibles.
+          Para consultas, presentaciones, prensa o verificación de identidad autoral,
+          utiliza los canales oficiales disponibles.
         </p>
       </div>
 
       <div class="contact-links">
+        {site.email && (
+          <a class="button" href={`mailto:${site.email}`}>
+            Correo oficial · {site.email}
+          </a>
+        )}
         {site.social.filter((item) => item.url).map((item) => (
           <a class="button secondary social-button" href={item.url} target="_blank" rel="me noopener">
             <SocialIcon label={item.label} />
             {item.label}
           </a>
         ))}
-        {site.email && <a class="button" href={`mailto:${site.email}`}>{site.email}</a>}
       </div>
     </div>
   </section>

@@ -7,7 +7,7 @@ export const site = {
   description:
     'Sitio de prueba de Alejandro Roth, escritor y autor de Enigma. Relato de un amor incoherente.',
   url: 'https://dejavuurbe.github.io/alejandro-roth-web',
-  email: '',
+  email: 'aleroth@alejandroroth.com.ar',
   location: 'Buenos Aires, Argentina',
   social: [
     { label: 'Instagram', url: 'https://www.instagram.com/ale_rorh/' },
