@@ -1,0 +1,159 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../content/site';
+---
+<BaseLayout
+  title={`Actividad y contacto | ${site.name}`}
+  description={`Actividad literaria y canales públicos de ${site.name}.`}
+>
+  <section class="section activity-page">
+    <div class="container activity-inner">
+      <p class="eyebrow">Actividad literaria</p>
+      <h1>Presentaciones y recorrido público</h1>
+      <p class="lead">
+        Registro de espacios y actividades vinculadas con Alejandro Roth y su obra.
+      </p>
+
+      <div class="press-grid">
+        {site.press.map((item, index) => (
+          <article class="card activity-card">
+            <span class="drop" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+            <p class="eyebrow">{item.source}</p>
+            <h2>{item.title}</h2>
+            <p>{item.description}</p>
+            {item.url && (
+              <a class="source-link" href={item.url} target="_blank" rel="noopener">
+                Ver fuente →
+              </a>
+            )}
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact-page" id="contacto">
+    <div class="container contact-card">
+      <div>
+        <p class="eyebrow">Contacto</p>
+        <h2>Canales públicos</h2>
+        <p class="lead">
+          Para conocer novedades, presentaciones y actividad pública de Alejandro Roth,
+          consulta sus canales oficiales disponibles.
+        </p>
+      </div>
+
+      <div class="contact-links">
+        {site.social.filter((item) => item.url).map((item) => (
+          <a class="button secondary" href={item.url} target="_blank" rel="me noopener">
+            {item.label}
+          </a>
+        ))}
+        {site.email && <a class="button" href={`mailto:${site.email}`}>{site.email}</a>}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .activity-page {
+    min-height: 70vh;
+    background:
+      radial-gradient(circle at 75% 18%, rgba(79,169,209,.11), transparent 25rem);
+  }
+
+  .activity-inner { max-width: 1120px; }
+  h1 { max-width: 13ch; }
+  .lead { max-width: 55ch; }
+
+  .press-grid {
+    display: grid;
+    gap: 1.25rem;
+    margin-top: 3rem;
+  }
+
+  .activity-card {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .activity-card::after {
+    content: '';
+    position: absolute;
+    width: 220px;
+    height: 95px;
+    right: -80px;
+    bottom: -50px;
+    border-radius: 50%;
+    border: 1px solid rgba(79,169,209,.24);
+    transform: rotate(-14deg);
+  }
+
+  .drop {
+    display: inline-block;
+    margin-bottom: 1.4rem;
+    font-family: var(--font-accent);
+    font-size: 2.1rem;
+    color: var(--color-accent);
+  }
+
+  .press-grid h2 {
+    font-size: clamp(1.8rem, 2.7vw, 2.45rem);
+    margin-bottom: 1rem;
+  }
+
+  .source-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--color-cream);
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-accent);
+  }
+
+  .contact-page {
+    display: grid;
+    align-items: center;
+    border-top: 1px solid rgba(79,169,209,.2);
+    background:
+      radial-gradient(circle at 82% 36%, rgba(79,169,209,.14), transparent 26rem);
+  }
+
+  .contact-card {
+    position: relative;
+    overflow: hidden;
+    max-width: 980px;
+    padding: clamp(2.2rem, 5vw, 4.5rem);
+    border: 1px solid rgba(79,169,209,.3);
+    border-radius: var(--radius);
+    background:
+      linear-gradient(145deg, rgba(255,255,255,.025), transparent 55%),
+      rgba(8,25,35,.82);
+    box-shadow: var(--shadow), var(--water-shadow);
+  }
+
+  .contact-card::after {
+    content: '';
+    position: absolute;
+    width: 420px;
+    height: 160px;
+    right: -100px;
+    bottom: -70px;
+    border-radius: 50%;
+    border: 1px solid rgba(158,220,243,.28);
+    transform: rotate(-16deg);
+  }
+
+  .contact-links {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    gap: .9rem;
+    flex-wrap: wrap;
+    margin-top: 2.2rem;
+  }
+
+  @media (min-width: 920px) {
+    .press-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>
