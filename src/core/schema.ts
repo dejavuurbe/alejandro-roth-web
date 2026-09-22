@@ -1,28 +1,39 @@
 import { site } from '../content/site';
 
 export function personSchema() {
-  return {
+  const data: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: site.name,
-    url: site.url,
     jobTitle: site.role,
     description: site.description,
-    sameAs: site.social.map((item) => item.url).filter((url) => url !== '#'),
   };
+
+  if (site.url && site.url !== 'https://example.com') data.url = site.url;
+
+  const sameAs = site.social
+    .map((item) => item.url)
+    .filter((url) => url && url !== '#');
+
+  if (sameAs.length) data.sameAs = sameAs;
+
+  return data;
 }
 
 export function bookSchema() {
   const book = site.featuredBook;
-  return {
+  const data: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': 'Book',
     name: book.title,
     author: { '@type': 'Person', name: site.name },
-    isbn: book.isbn,
-    datePublished: book.year,
     description: book.synopsis,
   };
+
+  if (book.isbn) data.isbn = book.isbn;
+  if (book.year) data.datePublished = book.year;
+
+  return data;
 }
 
 export function faqSchema() {
