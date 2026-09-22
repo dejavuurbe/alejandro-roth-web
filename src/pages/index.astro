@@ -1,15 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { site } from '../content/site';
-import { personSchema } from '../core/schema';
-const base = import.meta.env.BASE_URL;
+import { personSchema, bookSchema } from '../core/schema';
 ---
 <BaseLayout
   title={`${site.name} | ${site.role}`}
   description={site.description}
-  schema={personSchema()}
+  schema={[personSchema(), bookSchema()]}
 >
-  <section class="hero section">
+  <section class="hero section" id="inicio">
     <img class="cover-ghost" src={site.featuredBook.cover} alt="" aria-hidden="true" />
     <div class="water-light water-light-one"></div>
     <div class="water-light water-light-two"></div>
@@ -24,8 +23,17 @@ const base = import.meta.env.BASE_URL;
           <span class="red">incoherente</span>.
         </p>
         <div class="actions">
-          <a class="button" href={`${base}obra/`}>Conocer Enigma</a>
-          <a class="button secondary" href={`${base}autor/`}>Sobre el autor</a>
+          <a class="button secondary" href="#obra">Conocer Enigma</a>
+          {site.featuredBook.buyUrl && (
+            <a
+              class="button"
+              href={site.featuredBook.buyUrl}
+              target="_blank"
+              rel="noopener"
+            >
+              Comprar el libro
+            </a>
+          )}
         </div>
       </div>
 
@@ -45,7 +53,7 @@ const base = import.meta.env.BASE_URL;
     </div>
   </section>
 
-  <section class="section book-section">
+  <section class="section book-section" id="obra">
     <div class="container grid-two book-grid">
       <div class="book-visual">
         <div class="book-glow"></div>
@@ -57,37 +65,46 @@ const base = import.meta.env.BASE_URL;
           height="780"
         />
       </div>
+
       <div class="book-copy">
-        <p class="eyebrow">Obra destacada</p>
+        <p class="eyebrow">Obra</p>
         <h2 class="enigma-title">{site.featuredBook.title}</h2>
         <p class="subtitle">
           <span class="subtitle-main">Relato de un amor</span>
           <span class="subtitle-accent">incoherente</span>
         </p>
         <p class="lead">{site.featuredBook.synopsis}</p>
-        <div class="book-actions">
-          {site.featuredBook.buyUrl && (
+
+        {site.featuredBook.buyUrl && (
+          <div class="purchase">
+            <p class="purchase-label">Disponible online</p>
             <a
               class="button"
               href={site.featuredBook.buyUrl}
               target="_blank"
               rel="noopener"
             >
-              Comprar el libro
+              {site.featuredBook.buyLabel || 'Comprar el libro'}
             </a>
-          )}
-          <a class="button secondary" href={`${base}obra/`}>Ver la obra</a>
-        </div>
+          </div>
+        )}
       </div>
     </div>
   </section>
 
-  <section class="section author-strip">
-    <div class="container intro">
-      <p class="eyebrow">Autor</p>
-      <h2>Sobre Alejandro Roth</h2>
-      <p class="lead">{site.author.shortBio}</p>
-      <a class="text-link" href={`${base}autor/`}>Conocer su trayectoria →</a>
+  <section class="section author-section" id="autor">
+    <div class="container author-grid">
+      <div>
+        <p class="eyebrow">Biografía</p>
+        <h2>Sobre Alejandro Roth</h2>
+      </div>
+      <div>
+        <p class="lead">{site.author.longBio}</p>
+        <p class="author-note">
+          Su obra <strong>Enigma. Relato de un amor <span>incoherente</span></strong>
+          articula actualmente su presencia pública como autor y sus actividades literarias.
+        </p>
+      </div>
     </div>
   </section>
 </BaseLayout>
@@ -124,7 +141,6 @@ const base = import.meta.env.BASE_URL;
     z-index: -2;
     border: 1px solid rgba(158,220,243,.32);
     border-radius: 50%;
-    filter: blur(.2px);
     opacity: .35;
     pointer-events: none;
   }
@@ -153,12 +169,7 @@ const base = import.meta.env.BASE_URL;
   }
 
   .hero-copy { max-width: 720px; }
-
-  .hero-lead {
-    margin-top: 1.25rem;
-    max-width: 38ch;
-    line-height: 1.45;
-  }
+  .hero-lead { margin-top: 1.25rem; max-width: 38ch; line-height: 1.45; }
 
   .book-name {
     font-family: var(--font-accent);
@@ -167,6 +178,7 @@ const base = import.meta.env.BASE_URL;
   }
 
   .cream { color: var(--color-cream); }
+
   .red {
     color: var(--color-accent);
     font-family: var(--font-accent);
@@ -208,18 +220,8 @@ const base = import.meta.env.BASE_URL;
     box-shadow: 0 0 40px rgba(79,169,209,.12);
   }
 
-  .ring-one {
-    width: 470px;
-    height: 260px;
-    transform: rotate(-18deg);
-  }
-
-  .ring-two {
-    width: 510px;
-    height: 300px;
-    transform: rotate(18deg);
-    opacity: .45;
-  }
+  .ring-one { width: 470px; height: 260px; transform: rotate(-18deg); }
+  .ring-two { width: 510px; height: 300px; transform: rotate(18deg); opacity: .45; }
 
   .actions {
     display: flex;
@@ -295,32 +297,48 @@ const base = import.meta.env.BASE_URL;
     transform: rotate(-2deg);
   }
 
-  .book-actions {
-    display: flex;
-    gap: .9rem;
-    flex-wrap: wrap;
-    margin-top: 1.5rem;
+  .purchase {
+    margin-top: 2rem;
+    padding-top: 1.4rem;
+    border-top: 1px solid rgba(79,169,209,.2);
   }
 
-  .author-strip {
+  .purchase-label {
+    margin-bottom: .8rem;
+    font-size: .82rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--color-water-bright);
+  }
+
+  .author-section {
     background:
       linear-gradient(90deg, rgba(216,52,42,.045), transparent 40%),
       var(--color-bg);
   }
 
-  .intro { max-width: 850px; margin-inline: auto; }
-  .text-link {
-    display: inline-block;
-    margin-top: 1rem;
+  .author-grid {
+    display: grid;
+    gap: clamp(2rem, 6vw, 6rem);
+    align-items: start;
+    max-width: 1040px;
+  }
+
+  .author-note {
+    max-width: 58ch;
     color: var(--color-cream);
-    font-weight: 700;
-    text-decoration: none;
-    border-bottom: 1px solid var(--color-accent);
-    padding-bottom: .2rem;
+  }
+
+  .author-note span {
+    color: var(--color-accent);
+    font-family: var(--font-accent);
+    font-size: 1.3em;
   }
 
   @media (min-width: 900px) {
     .hero-grid { grid-template-columns: 1.15fr .85fr; }
+    .author-grid { grid-template-columns: .75fr 1.25fr; }
   }
 
   @media (max-width: 899px) {
