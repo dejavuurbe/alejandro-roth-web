@@ -37,6 +37,26 @@ a { color: inherit; }
   padding: clamp(4rem, 7vw, 6.5rem) 0;
 }
 
+.section-screen {
+  min-height: var(--section-full);
+  display: grid;
+  align-items: center;
+}
+
+.section-half {
+  min-height: var(--section-half);
+  display: grid;
+  align-items: center;
+}
+
+.section-screen.compact {
+  padding-block: var(--section-full-pad-y);
+}
+
+.section-half.compact {
+  padding-block: var(--section-half-pad-y);
+}
+
 .section::after {
   content: '';
   position: absolute;
@@ -143,6 +163,14 @@ p { margin-top: 0; }
 
 @media (min-width: 800px) {
   .grid-two { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 919px) {
+  .section-screen,
+  .section-half {
+    min-height: auto;
+    display: block;
+  }
 }
 
 @media (max-width: 640px) {
