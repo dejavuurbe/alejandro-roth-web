@@ -9,7 +9,8 @@ html {
 body {
   margin: 0;
   font-family: var(--font-body);
-  line-height: 1.65;
+  font-size: 17px;
+  line-height: 1.7;
   background: var(--color-bg);
 }
 
@@ -22,44 +23,51 @@ img {
 a { color: inherit; }
 
 .container {
-  width: min(calc(100% - 2rem), var(--max-width));
+  width: min(calc(100% - 2.5rem), var(--max-width));
   margin-inline: auto;
 }
 
 .section {
-  padding: clamp(3.5rem, 8vw, 7rem) 0;
+  padding: clamp(4rem, 7vw, 6.5rem) 0;
 }
 
 .eyebrow {
-  margin: 0 0 .75rem;
-  font-size: .78rem;
+  margin: 0 0 .8rem;
+  font-size: .76rem;
   font-weight: 700;
-  letter-spacing: .14em;
+  letter-spacing: .16em;
   text-transform: uppercase;
-  color: var(--color-muted);
+  color: #8fc8e4;
 }
 
 h1, h2, h3 {
   font-family: var(--font-display);
-  line-height: 1.08;
+  line-height: 1.05;
   text-wrap: balance;
 }
 
 h1 {
   margin: 0;
-  font-size: clamp(3rem, 8vw, 6.7rem);
+  font-size: clamp(3.2rem, 6vw, 5.8rem);
   font-weight: 500;
 }
 
 h2 {
   margin: 0 0 1rem;
-  font-size: clamp(2.1rem, 5vw, 4rem);
+  font-size: clamp(2.2rem, 4.2vw, 3.8rem);
   font-weight: 500;
 }
 
+h3 {
+  margin-top: 0;
+  font-size: clamp(1.35rem, 2vw, 1.7rem);
+}
+
+p { margin-top: 0; }
+
 .lead {
-  max-width: 68ch;
-  font-size: clamp(1.08rem, 2vw, 1.3rem);
+  max-width: 64ch;
+  font-size: clamp(1.1rem, 1.7vw, 1.32rem);
   color: var(--color-muted);
 }
 
@@ -67,8 +75,8 @@ h2 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 46px;
-  padding: .75rem 1.1rem;
+  min-height: 48px;
+  padding: .78rem 1.18rem;
   border-radius: 999px;
   border: 1px solid var(--color-accent);
   background: var(--color-accent);
@@ -84,12 +92,12 @@ h2 {
 
 .grid-two {
   display: grid;
-  gap: clamp(2rem, 6vw, 5rem);
+  gap: clamp(2.5rem, 6vw, 6rem);
   align-items: center;
 }
 
 .card {
-  padding: clamp(1.25rem, 3vw, 2rem);
+  padding: clamp(1.5rem, 2.5vw, 2rem);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   background: var(--color-surface);
@@ -97,4 +105,10 @@ h2 {
 
 @media (min-width: 800px) {
   .grid-two { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  .container { width: min(calc(100% - 1.5rem), var(--max-width)); }
+  .section { padding: 3.5rem 0; }
 }
