@@ -24,16 +24,6 @@ import { personSchema, bookSchema } from '../core/schema';
         </p>
         <div class="actions">
           <a class="button secondary" href="#obra">Conocer Enigma</a>
-          {site.featuredBook.buyUrl && (
-            <a
-              class="button"
-              href={site.featuredBook.buyUrl}
-              target="_blank"
-              rel="noopener"
-            >
-              Adquirí tu ejemplar
-            </a>
-          )}
         </div>
       </div>
 
@@ -74,6 +64,19 @@ import { personSchema, bookSchema } from '../core/schema';
           <span class="subtitle-accent">incoherente</span>
         </p>
         <p class="lead">{site.featuredBook.synopsis}</p>
+
+        {site.featuredBook.buyUrl && (
+          <div class="purchase">
+            <a
+              class="button"
+              href={site.featuredBook.buyUrl}
+              target="_blank"
+              rel="noopener"
+            >
+              {site.featuredBook.buyLabel || 'Adquirí tu ejemplar'}
+            </a>
+          </div>
+        )}
       </div>
     </div>
   </section>
@@ -283,6 +286,9 @@ import { personSchema, bookSchema } from '../core/schema';
     transform: rotate(-2deg);
   }
 
+  .purchase {
+    margin-top: 2rem;
+  }
 
   .author-section {
     background:
