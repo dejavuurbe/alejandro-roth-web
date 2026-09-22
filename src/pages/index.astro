@@ -2,6 +2,14 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { site } from '../content/site';
 import { personSchema, bookSchema } from '../core/schema';
+
+const bookMeta = [
+  ['Género', site.featuredBook.genre],
+  ['Año', site.featuredBook.year],
+  ['Páginas', site.featuredBook.pages],
+  ['ISBN', site.featuredBook.isbn],
+  ['Edición', site.featuredBook.publisher],
+].filter(([, value]) => value);
 ---
 <BaseLayout
   title={`${site.name} | ${site.role}`}
@@ -64,6 +72,17 @@ import { personSchema, bookSchema } from '../core/schema';
           <span class="subtitle-accent">incoherente</span>
         </p>
         <p class="lead">{site.featuredBook.synopsis}</p>
+
+        {bookMeta.length > 0 && (
+          <dl class="book-meta">
+            {bookMeta.map(([label, value]) => (
+              <div>
+                <dt>{label}</dt>
+                <dd>{value}</dd>
+              </div>
+            ))}
+          </dl>
+        )}
 
         {site.featuredBook.buyUrl && (
           <div class="purchase">
@@ -286,8 +305,34 @@ import { personSchema, bookSchema } from '../core/schema';
     transform: rotate(-2deg);
   }
 
+  .book-meta {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .7rem 1.15rem;
+    margin: 1.15rem 0 0;
+  }
+
+  .book-meta div {
+    padding-top: .55rem;
+    border-top: 1px solid rgba(79,169,209,.22);
+  }
+
+  .book-meta dt {
+    font-size: .72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--color-muted);
+  }
+
+  .book-meta dd {
+    margin: .18rem 0 0;
+    color: var(--color-cream);
+    font-weight: 600;
+  }
+
   .purchase {
-    margin-top: 2rem;
+    margin-top: 1.4rem;
   }
 
   .author-section {
