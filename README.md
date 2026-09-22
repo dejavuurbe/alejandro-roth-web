@@ -1,20 +1,29 @@
-# Alejandro Roth — sitio web
+# Alejandro Roth — sitio web piloto
 
-Sitio en desarrollo de Alejandro Roth, autor de *Enigma. Relato de un amor incoherente*.
+Sitio de prueba de Alejandro Roth, autor de *Enigma. Relato de un amor incoherente*.
 
 Este repositorio fue creado a partir de `autores-web-plantilla` y se mantiene independiente de la plantilla maestra y de los demás sitios de autores.
+
+## Arquitectura probada
+
+Web Nivel 1 de dos páginas:
+
+1. **Inicio** — autor, obra principal, compra y biografía.
+2. **Actividad** — presentaciones, recorrido público y contacto.
+
+El encabezado queda reducido a la marca/nombre del autor, **Actividad** y **Contacto**.
 
 ## Estado
 
 - Diagnóstico digital inicial: realizado.
-- Identidad básica y desambiguación: incorporadas.
-- Estructura del sitio: creada.
-- Biografía completa: pendiente.
+- Identidad visual extraída de la obra: aplicada.
+- Compra externa: funcional en modo de prueba.
+- Estructura Nivel 1: implementada.
+- Biografía completa: pendiente de material definitivo.
 - Sinopsis oficial: pendiente.
-- Fotografía de autor: pendiente.
-- Portada definitiva: pendiente.
-- Datos editoriales y enlaces de compra: pendientes.
-- Dominio y publicación: pendientes.
+- Fotografía y portada finales: pendientes.
+- Dominio final: pendiente.
+- Sitio mantenido en noindex durante la prueba.
 
 ## Flujo
 
