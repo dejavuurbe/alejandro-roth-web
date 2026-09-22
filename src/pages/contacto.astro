@@ -4,17 +4,34 @@ import { site } from '../content/site';
 ---
 <BaseLayout
   title={`Contacto | ${site.name}`}
-  description={`Contacto oficial de ${site.name} para lectores, prensa y actividad cultural.`}
+  description={`Canales públicos de ${site.name}.`}
 >
   <section class="section">
     <div class="container">
       <p class="eyebrow">Contacto</p>
-      <h1>Contacto oficial</h1>
+      <h1>Canales públicos</h1>
       <p class="lead">
-        Para prensa, entrevistas, encuentros de lectura, presentaciones y consultas relacionadas
-        con la obra.
+        Esta web es una prueba. Por el momento utilizamos únicamente los canales públicos
+        localizados durante el diagnóstico digital.
       </p>
-      <p><a class="button" href={`mailto:${site.email}`}>{site.email}</a></p>
+
+      <div class="contact-links">
+        {site.social.filter((item) => item.url).map((item) => (
+          <a class="button" href={item.url} target="_blank" rel="me noopener">
+            {item.label}
+          </a>
+        ))}
+        {site.email && <a class="button" href={`mailto:${site.email}`}>{site.email}</a>}
+      </div>
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .contact-links {
+    display: flex;
+    gap: .8rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+</style>
