@@ -1,16 +1,16 @@
 :root {
-  --color-bg: #f5f2ec;
-  --color-surface: #ffffff;
-  --color-text: #1d1d1b;
-  --color-muted: #65645f;
-  --color-accent: #4b463c;
+  --color-bg: #081722;
+  --color-surface: #102735;
+  --color-text: #eef4f7;
+  --color-muted: #a8bac5;
+  --color-accent: #e13934;
   --color-accent-contrast: #ffffff;
-  --color-border: #d8d3c9;
+  --color-border: #284453;
 
   --font-display: Georgia, 'Times New Roman', serif;
   --font-body: Arial, Helvetica, sans-serif;
 
   --max-width: 1180px;
   --radius: 18px;
-  --shadow: 0 18px 50px rgba(0, 0, 0, 0.08);
+  --shadow: 0 22px 60px rgba(0, 0, 0, 0.34);
 }
