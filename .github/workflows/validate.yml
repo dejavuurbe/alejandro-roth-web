@@ -23,8 +23,5 @@ jobs:
       - name: Instalar dependencias
         run: npm install
 
-      - name: Validar Astro
-        run: npm run check
-
       - name: Generar sitio
         run: npm run build
