@@ -19,9 +19,10 @@ const base = import.meta.env.BASE_URL;
     position: sticky;
     top: 0;
     z-index: 20;
-    border-bottom: 1px solid var(--color-border);
-    background: color-mix(in srgb, var(--color-bg) 92%, transparent);
-    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(79, 169, 209, .2);
+    background: rgba(3, 8, 13, .9);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, .16);
   }
   .inner {
     min-height: 76px;
@@ -32,8 +33,10 @@ const base = import.meta.env.BASE_URL;
   }
   .brand {
     font-family: var(--font-display);
-    font-size: 1.08rem;
+    font-size: 1.3rem;
     font-weight: 700;
+    letter-spacing: .02em;
+    color: var(--color-cream);
     text-decoration: none;
   }
   nav {
@@ -43,10 +46,25 @@ const base = import.meta.env.BASE_URL;
     justify-content: flex-end;
   }
   nav a {
-    font-size: .98rem;
+    position: relative;
+    font-size: .93rem;
+    font-weight: 600;
+    color: var(--color-muted);
     text-decoration: none;
   }
-  nav a:hover, .brand:hover { color: var(--color-accent); }
+  nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 100%;
+    bottom: -.35rem;
+    height: 1px;
+    background: var(--color-water);
+    transition: right .18s ease;
+  }
+  nav a:hover { color: var(--color-cream); }
+  nav a:hover::after { right: 0; }
+  .brand:hover { color: var(--color-water-bright); }
   @media (max-width: 620px) {
     .inner { align-items: flex-start; padding-block: .85rem; }
     nav { gap: .55rem .85rem; }

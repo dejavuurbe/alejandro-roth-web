@@ -26,6 +26,13 @@ const absoluteImage = new URL(image, Astro.site ?? Astro.url.origin).href;
 <meta name="robots" content="noindex,nofollow" />
 <link rel="canonical" href={canonical} />
 
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+/>
+
 <meta property="og:type" content="website" />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
@@ -38,7 +45,7 @@ const absoluteImage = new URL(image, Astro.site ?? Astro.url.origin).href;
 <meta name="twitter:image" content={absoluteImage} />
 
 <link rel="manifest" href={`${base}site.webmanifest`} />
-<meta name="theme-color" content="#081722" />
+<meta name="theme-color" content="#03080d" />
 
 {schema && (
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />
