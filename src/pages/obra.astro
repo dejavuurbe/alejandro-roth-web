@@ -3,6 +3,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { site } from '../content/site';
 import { bookSchema, faqSchema } from '../core/schema';
 const book = site.featuredBook;
+
+const metadata = [
+  ['Autor', site.name],
+  ['Género', book.genre],
+  ['Año', book.year],
+  ['Páginas', book.pages],
+  ['ISBN', book.isbn],
+  ['Edición', book.publisher],
+].filter(([, value]) => Boolean(value));
 ---
 <BaseLayout
   title={`${book.title} | ${site.name}`}
@@ -22,15 +31,16 @@ const book = site.featuredBook;
         <h1>{book.title}</h1>
         <p class="lead">{book.subtitle}</p>
         <p>{book.synopsis}</p>
-        <dl>
-          <div><dt>Autor</dt><dd>{site.name}</dd></div>
-          <div><dt>Género</dt><dd>{book.genre}</dd></div>
-          <div><dt>Año</dt><dd>{book.year}</dd></div>
-          <div><dt>Páginas</dt><dd>{book.pages}</dd></div>
-          <div><dt>ISBN</dt><dd>{book.isbn}</dd></div>
-          <div><dt>Edición</dt><dd>{book.publisher}</dd></div>
-        </dl>
-        <a class="button" href={book.buyUrl}>Dónde conseguirlo</a>
+
+        {metadata.length > 0 && (
+          <dl>
+            {metadata.map(([label, value]) => (
+              <div><dt>{label}</dt><dd>{value}</dd></div>
+            ))}
+          </dl>
+        )}
+
+        {book.buyUrl && <a class="button" href={book.buyUrl}>Dónde conseguirlo</a>}
       </article>
     </div>
   </section>
