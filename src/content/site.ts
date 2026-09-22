@@ -31,7 +31,7 @@ export const site = {
     isbn: '',
     publisher: '',
     buyUrl: 'https://www.autoreseditores.com/libro/9550/maria-paula-villa/enigma.html',
-    buyLabel: 'Comprar en Autores Editores',
+    buyLabel: 'Adquirí tu ejemplar',
   },
   press: [
     {

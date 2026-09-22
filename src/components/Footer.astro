@@ -1,5 +1,6 @@
 ---
 import { site } from '../content/site';
+import SocialIcon from './SocialIcon.astro';
 const year = new Date().getFullYear();
 ---
 <footer class="site-footer">
@@ -10,7 +11,10 @@ const year = new Date().getFullYear();
     </div>
     <div class="links">
       {site.social.filter((item) => item.url).map((item) => (
-        <a href={item.url} target="_blank" rel="me noopener">{item.label}</a>
+        <a class="social-link" href={item.url} target="_blank" rel="me noopener">
+          <SocialIcon label={item.label} />
+          {item.label}
+        </a>
       ))}
       {site.email && <a href={`mailto:${site.email}`}>Correo</a>}
     </div>
@@ -30,6 +34,11 @@ const year = new Date().getFullYear();
     flex-wrap: wrap;
   }
   p, .legal { color: var(--color-muted); }
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: .45rem;
+  }
   .links {
     display: flex;
     gap: 1rem;

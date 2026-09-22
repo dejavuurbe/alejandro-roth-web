@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { site } from '../content/site';
+import SocialIcon from '../components/SocialIcon.astro';
 ---
 <BaseLayout
   title={`Actividad y contacto | ${site.name}`}
@@ -23,7 +24,7 @@ import { site } from '../content/site';
             <p>{item.description}</p>
             {item.url && (
               <a class="source-link" href={item.url} target="_blank" rel="noopener">
-                Instagram →
+                <SocialIcon label="Instagram" /> Instagram →
               </a>
             )}
           </article>
@@ -45,7 +46,8 @@ import { site } from '../content/site';
 
       <div class="contact-links">
         {site.social.filter((item) => item.url).map((item) => (
-          <a class="button secondary" href={item.url} target="_blank" rel="me noopener">
+          <a class="button secondary social-button" href={item.url} target="_blank" rel="me noopener">
+            <SocialIcon label={item.label} />
             {item.label}
           </a>
         ))}
@@ -103,7 +105,9 @@ import { site } from '../content/site';
   }
 
   .source-link {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: .45rem;
     margin-top: 1rem;
     color: var(--color-cream);
     font-weight: 700;
@@ -142,6 +146,10 @@ import { site } from '../content/site';
     border-radius: 50%;
     border: 1px solid rgba(158,220,243,.28);
     transform: rotate(-16deg);
+  }
+
+  .social-button {
+    gap: .5rem;
   }
 
   .contact-links {
