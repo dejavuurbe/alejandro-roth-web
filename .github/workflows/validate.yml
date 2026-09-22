@@ -1,10 +1,9 @@
-name: Validar plantilla
+name: Validar sitio
 
 on:
   push:
     branches:
-      - main
-      - desarrollo-inicial
+      - "**"
   pull_request:
     branches:
       - main

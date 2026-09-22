@@ -1,54 +1,70 @@
+const base = import.meta.env.BASE_URL;
+
 export const site = {
-  name: 'Nombre del autor',
-  role: 'Escritor/a',
-  tagline: 'Una frase breve que exprese su identidad autoral.',
+  name: 'Alejandro Roth',
+  role: 'Escritor',
+  tagline: 'Autor de «Enigma. Relato de un amor incoherente».',
   description:
-    'Descripción clara del autor, su obra y los temas centrales de su trabajo.',
-  url: 'https://example.com',
-  email: 'contacto@example.com',
-  location: 'Ciudad, País',
+    'Sitio de prueba de Alejandro Roth, escritor y autor de Enigma. Relato de un amor incoherente.',
+  url: 'https://dejavuurbe.github.io/alejandro-roth-web',
+  email: '',
+  location: 'Buenos Aires, Argentina',
   social: [
-    { label: 'Instagram', url: '#' },
-    { label: 'Facebook', url: '#' },
+    { label: 'Instagram', url: 'https://www.instagram.com/ale_rorh/' },
   ],
   author: {
     shortBio:
-      'Biografía breve para la portada. Debe responder rápidamente quién es el autor y qué escribe.',
+      'Alejandro Roth es escritor y autor de Enigma. Relato de un amor incoherente. Ha presentado su obra en espacios culturales del oeste del Gran Buenos Aires.',
     longBio:
-      'Biografía extendida. Sustituir por información verificada, trayectoria, publicaciones y actividad cultural relevante.',
-    photo: '/images/autor-placeholder.svg',
+      'Alejandro Roth es autor de Enigma. Relato de un amor incoherente. Su actividad literaria incluye presentaciones en La Casona Cultural, en Morón, y en la Biblioteca Popular Almafuerte, en Rafael Castillo, además de su vínculo con el circuito de Autores de La Matanza.',
+    photo: `${base}images/alejandro-roth-autor.jpg`,
   },
   featuredBook: {
-    title: 'Título de la obra',
-    subtitle: 'Subtítulo o frase de presentación',
-    cover: '/images/portada-placeholder.svg',
+    title: 'Enigma',
+    subtitle: 'Relato de un amor incoherente',
+    cover: `${base}images/enigma-portada.jpg`,
     synopsis:
-      'Sinopsis breve orientada al lector. Debe explicar con claridad la propuesta del libro sin convertirse en una descripción genérica.',
-    genre: 'Género',
-    year: '2026',
-    pages: '000',
-    isbn: '000-0-00-000000-0',
-    publisher: 'Editorial / Independiente',
-    buyUrl: '#',
+      'Una historia centrada en el drama generacional de las relaciones modernas y en cómo los duelos emocionales previos influyen en la construcción de nuevos vínculos.',
+    genre: '',
+    year: '',
+    pages: '',
+    isbn: '',
+    publisher: '',
+    buyUrl: '',
   },
   press: [
     {
-      title: 'Entrevista o nota destacada',
-      source: 'Medio',
-      url: '#',
-      description: 'Contexto breve sobre la aparición.',
+      title: 'Presentación de Enigma',
+      source: 'La Casona Cultural · Morón',
+      url: '',
+      description:
+        'Presentación de la obra en La Casona Cultural, Mendoza 109, Morón, acompañada por música en vivo y lectura de poesía.',
+    },
+    {
+      title: 'Presentación de Enigma',
+      source: 'Biblioteca Popular Almafuerte · Rafael Castillo',
+      url: 'https://www.instagram.com/p/DcWUFv3vygW/',
+      description:
+        'Presentación de la novela en la Biblioteca Popular Almafuerte de Rafael Castillo, con actividad libre y gratuita.',
+    },
+    {
+      title: 'Actividad literaria local',
+      source: 'Autores de La Matanza',
+      url: '',
+      description:
+        'Participación vinculada al circuito de autores y actividades literarias de La Matanza.',
     },
   ],
   faq: [
     {
-      question: '¿Quién es Nombre del autor?',
+      question: '¿Quién es Alejandro Roth?',
       answer:
-        'Respuesta directa y verificable, pensada también para buscadores y sistemas de respuesta.',
+        'Alejandro Roth es escritor y autor de Enigma. Relato de un amor incoherente, con actividad literaria en espacios culturales del oeste del Gran Buenos Aires.',
     },
     {
-      question: '¿De qué trata su obra principal?',
+      question: '¿De qué trata Enigma. Relato de un amor incoherente?',
       answer:
-        'Respuesta breve que resume la propuesta de la obra sin reemplazar la sinopsis completa.',
+        'La obra aborda relaciones modernas atravesadas por duelos emocionales previos y examina cómo esas experiencias condicionan la construcción de nuevos vínculos.',
     },
   ],
 };

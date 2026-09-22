@@ -3,16 +3,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { site } from '../content/site';
 ---
 <BaseLayout
-  title={`Prensa y actividad | ${site.name}`}
-  description={`Entrevistas, notas y actividad cultural de ${site.name}.`}
+  title={`Actividad literaria | ${site.name}`}
+  description={`Presentaciones y actividad cultural de ${site.name}.`}
 >
   <section class="section">
     <div class="container">
-      <p class="eyebrow">Prensa y actividad</p>
-      <h1>Notas, entrevistas y apariciones</h1>
+      <p class="eyebrow">Actividad literaria</p>
+      <h1>Presentaciones y recorrido público</h1>
       <p class="lead">
-        Espacio para reunir fuentes externas verificables y facilitar el trabajo de lectores,
-        periodistas, bibliotecas y organizadores.
+        Registro de espacios y actividades vinculadas con Alejandro Roth y su obra.
+        Las fuentes externas se añadirán a medida que sean verificadas.
       </p>
       <div class="press-grid">
         {site.press.map((item) => (
@@ -20,7 +20,7 @@ import { site } from '../content/site';
             <p class="eyebrow">{item.source}</p>
             <h2>{item.title}</h2>
             <p>{item.description}</p>
-            <a href={item.url}>Ver fuente</a>
+            {item.url && <a href={item.url}>Ver fuente</a>}
           </article>
         ))}
       </div>
