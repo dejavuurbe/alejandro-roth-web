@@ -3,7 +3,7 @@ name: Publicar sitio de prueba
 on:
   push:
     branches:
-      - adaptacion-alejandro
+      - main
   workflow_dispatch:
 
 permissions:
@@ -35,8 +35,6 @@ jobs:
 
       - name: Configurar Pages
         uses: actions/configure-pages@v5
-        with:
-          enablement: true
 
       - name: Subir sitio
         uses: actions/upload-pages-artifact@v3
