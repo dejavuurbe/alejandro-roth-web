@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { site } from '../content/site';
 import { personSchema } from '../core/schema';
+const base = import.meta.env.BASE_URL;
 ---
 <BaseLayout
   title={`${site.name} | ${site.role}`}
@@ -11,18 +12,18 @@ import { personSchema } from '../core/schema';
   <section class="hero section">
     <div class="container hero-grid">
       <div>
-        <p class="eyebrow">{site.role}</p>
+        <p class="eyebrow">Escritor · Buenos Aires</p>
         <h1>{site.name}</h1>
         <p class="lead">{site.tagline}</p>
         <div class="actions">
-          <a class="button" href="/obra/">Conocer la obra</a>
-          <a class="button secondary" href="/autor/">Sobre el autor</a>
+          <a class="button" href={`${base}obra/`}>Conocer Enigma</a>
+          <a class="button secondary" href={`${base}autor/`}>Sobre el autor</a>
         </div>
       </div>
       <img
         class="portrait"
         src={site.author.photo}
-        alt={`Retrato de ${site.name}`}
+        alt={`Retrato provisional de ${site.name}`}
         width="700"
         height="820"
       />
@@ -34,30 +35,40 @@ import { personSchema } from '../core/schema';
       <img
         class="cover"
         src={site.featuredBook.cover}
-        alt={`Portada de ${site.featuredBook.title}`}
+        alt={`Portada provisional de ${site.featuredBook.title}`}
         width="520"
         height="780"
       />
       <div>
         <p class="eyebrow">Obra destacada</p>
         <h2>{site.featuredBook.title}</h2>
+        <p class="subtitle">{site.featuredBook.subtitle}</p>
         <p class="lead">{site.featuredBook.synopsis}</p>
-        <a class="button" href="/obra/">Ver libro</a>
+        <a class="button" href={`${base}obra/`}>Ver la obra</a>
       </div>
     </div>
   </section>
 
   <section class="section">
-    <div class="container">
+    <div class="container intro">
       <p class="eyebrow">Presentación</p>
-      <h2>Quién es {site.name}</h2>
+      <h2>Una identidad digital inequívoca</h2>
       <p class="lead">{site.author.shortBio}</p>
+      <p>
+        Esta versión funciona como prueba del sistema de creación de sitios para autores:
+        estructura, desambiguación, SEO, adaptación móvil y publicación.
+      </p>
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .hero { padding-top: clamp(3rem, 8vw, 8rem); }
+  .hero {
+    padding-top: clamp(3rem, 8vw, 8rem);
+    background:
+      radial-gradient(circle at 80% 20%, rgba(76, 176, 210, .16), transparent 28rem),
+      linear-gradient(180deg, rgba(8, 23, 34, .4), transparent);
+  }
   .hero-grid {
     display: grid;
     gap: clamp(2rem, 6vw, 6rem);
@@ -69,6 +80,7 @@ import { personSchema } from '../core/schema';
     object-fit: cover;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
+    border: 1px solid var(--color-border);
   }
   .actions {
     display: flex;
@@ -76,13 +88,23 @@ import { personSchema } from '../core/schema';
     flex-wrap: wrap;
     margin-top: 2rem;
   }
-  .book-section { background: var(--color-surface); }
+  .book-section {
+    background: var(--color-surface);
+    border-block: 1px solid var(--color-border);
+  }
   .cover {
     max-width: 360px;
     margin-inline: auto;
     border-radius: 8px;
     box-shadow: var(--shadow);
   }
+  .subtitle {
+    margin-top: -.3rem;
+    color: var(--color-accent);
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+  }
+  .intro { max-width: 850px; margin-inline: auto; }
   @media (min-width: 850px) {
     .hero-grid { grid-template-columns: 1.2fr .8fr; }
   }
