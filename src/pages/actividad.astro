@@ -59,7 +59,10 @@ import SocialIcon from '../components/SocialIcon.astro';
 
 <style>
   .activity-page {
-    min-height: 70vh;
+    min-height: calc(100vh - 76px);
+    display: grid;
+    align-items: center;
+    padding-block: clamp(2.4rem, 5vh, 4rem);
     background:
       radial-gradient(circle at 75% 18%, rgba(79,169,209,.11), transparent 25rem);
   }
@@ -70,13 +73,19 @@ import SocialIcon from '../components/SocialIcon.astro';
 
   .press-grid {
     display: grid;
-    gap: 1.25rem;
-    margin-top: 3rem;
+    gap: 1.1rem;
+    margin-top: 2rem;
   }
 
   .activity-card {
     position: relative;
     overflow: hidden;
+    padding: clamp(1.15rem, 1.8vw, 1.55rem);
+  }
+
+  .activity-card > p:not(.eyebrow) {
+    margin-bottom: .6rem;
+    line-height: 1.55;
   }
 
   .activity-card::after {
@@ -93,7 +102,7 @@ import SocialIcon from '../components/SocialIcon.astro';
 
   .drop {
     display: inline-block;
-    margin-bottom: 1.4rem;
+    margin-bottom: .85rem;
     font-family: var(--font-accent);
     font-size: 2.1rem;
     color: var(--color-accent);
@@ -101,14 +110,14 @@ import SocialIcon from '../components/SocialIcon.astro';
 
   .press-grid h2 {
     font-size: clamp(1.8rem, 2.7vw, 2.45rem);
-    margin-bottom: 1rem;
+    margin-bottom: .65rem;
   }
 
   .source-link {
     display: inline-flex;
     align-items: center;
     gap: .45rem;
-    margin-top: 1rem;
+    margin-top: .65rem;
     color: var(--color-cream);
     font-weight: 700;
     text-decoration: none;
@@ -163,5 +172,17 @@ import SocialIcon from '../components/SocialIcon.astro';
 
   @media (min-width: 920px) {
     .press-grid { grid-template-columns: repeat(3, 1fr); }
+
+    .activity-inner > .lead {
+      margin-bottom: 0;
+    }
+  }
+
+  @media (max-width: 919px) {
+    .activity-page {
+      min-height: auto;
+      display: block;
+      padding-block: clamp(3rem, 8vw, 5rem);
+    }
   }
 </style>
