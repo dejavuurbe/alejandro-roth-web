@@ -17,6 +17,14 @@
   --font-accent: 'Caveat', 'Segoe Print', cursive;
 
   --max-width: 1180px;
+
+  /* Escala vertical aprobada para escritorio */
+  --header-height: 76px;
+  --section-full: calc(100svh - var(--header-height));
+  --section-half: calc(var(--section-full) / 2);
+  --section-full-pad-y: clamp(1.8rem, 3.2vh, 2.8rem);
+  --section-half-pad-y: clamp(1rem, 2vh, 1.8rem);
+
   --radius: 18px;
   --shadow: 0 28px 70px rgba(0, 0, 0, .48);
   --water-shadow: 0 0 55px rgba(79, 169, 209, .18);
