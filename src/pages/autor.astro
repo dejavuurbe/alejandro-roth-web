@@ -8,19 +8,55 @@ import { personSchema } from '../core/schema';
   description={site.author.shortBio}
   schema={personSchema()}
 >
-  <section class="section">
-    <div class="container grid-two">
-      <img
-        src={site.author.photo}
-        alt={`Retrato de ${site.name}`}
-        width="700"
-        height="820"
-      />
-      <div>
+  <section class="section author-page">
+    <div class="container author-grid">
+      <div class="portrait-wrap">
+        <img
+          src={site.author.photo}
+          alt={`Retrato de ${site.name}`}
+          width="700"
+          height="820"
+        />
+      </div>
+      <article>
         <p class="eyebrow">Autor</p>
         <h1>{site.name}</h1>
         <p class="lead">{site.author.longBio}</p>
-      </div>
+        <p class="context">
+          Su obra <strong>Enigma. Relato de un amor incoherente</strong> articula actualmente
+          su presencia pública como autor y sus actividades literarias.
+        </p>
+      </article>
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .author-page { min-height: 70vh; display: grid; align-items: center; }
+  .author-grid {
+    display: grid;
+    gap: clamp(3rem, 7vw, 7rem);
+    align-items: center;
+  }
+  .portrait-wrap {
+    display: flex;
+    justify-content: center;
+  }
+  img {
+    width: min(100%, 430px);
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow);
+  }
+  article { max-width: 680px; }
+  .context {
+    max-width: 58ch;
+    margin-top: 1.5rem;
+    color: var(--color-text);
+  }
+  @media (min-width: 860px) {
+    .author-grid { grid-template-columns: .85fr 1.15fr; }
+  }
+</style>

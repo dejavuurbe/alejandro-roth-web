@@ -6,14 +6,16 @@ import { site } from '../content/site';
   title={`Contacto | ${site.name}`}
   description={`Canales públicos de ${site.name}.`}
 >
-  <section class="section">
-    <div class="container">
-      <p class="eyebrow">Contacto</p>
-      <h1>Canales públicos</h1>
-      <p class="lead">
-        Para conocer novedades, presentaciones y actividad pública de Alejandro Roth,
-        consulta sus canales oficiales disponibles.
-      </p>
+  <section class="section contact-page">
+    <div class="container contact-card">
+      <div>
+        <p class="eyebrow">Contacto</p>
+        <h1>Canales públicos</h1>
+        <p class="lead">
+          Para conocer novedades, presentaciones y actividad pública de Alejandro Roth,
+          consulta sus canales oficiales disponibles.
+        </p>
+      </div>
 
       <div class="contact-links">
         {site.social.filter((item) => item.url).map((item) => (
@@ -28,10 +30,25 @@ import { site } from '../content/site';
 </BaseLayout>
 
 <style>
+  .contact-page {
+    min-height: 72vh;
+    display: grid;
+    align-items: center;
+  }
+  .contact-card {
+    max-width: 980px;
+    padding: clamp(2rem, 5vw, 4rem);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background:
+      radial-gradient(circle at 90% 10%, rgba(76, 176, 210, .12), transparent 22rem),
+      var(--color-surface);
+    box-shadow: var(--shadow);
+  }
   .contact-links {
     display: flex;
     gap: .8rem;
     flex-wrap: wrap;
-    margin-top: 2rem;
+    margin-top: 2.2rem;
   }
 </style>
