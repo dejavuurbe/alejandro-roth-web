@@ -31,7 +31,7 @@ import { personSchema, bookSchema } from '../core/schema';
               target="_blank"
               rel="noopener"
             >
-              Comprar el libro
+              Adquirí tu ejemplar
             </a>
           )}
         </div>
@@ -74,20 +74,6 @@ import { personSchema, bookSchema } from '../core/schema';
           <span class="subtitle-accent">incoherente</span>
         </p>
         <p class="lead">{site.featuredBook.synopsis}</p>
-
-        {site.featuredBook.buyUrl && (
-          <div class="purchase">
-            <p class="purchase-label">Disponible online</p>
-            <a
-              class="button"
-              href={site.featuredBook.buyUrl}
-              target="_blank"
-              rel="noopener"
-            >
-              {site.featuredBook.buyLabel || 'Comprar el libro'}
-            </a>
-          </div>
-        )}
       </div>
     </div>
   </section>
@@ -297,20 +283,6 @@ import { personSchema, bookSchema } from '../core/schema';
     transform: rotate(-2deg);
   }
 
-  .purchase {
-    margin-top: 2rem;
-    padding-top: 1.4rem;
-    border-top: 1px solid rgba(79,169,209,.2);
-  }
-
-  .purchase-label {
-    margin-bottom: .8rem;
-    font-size: .82rem;
-    font-weight: 700;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: var(--color-water-bright);
-  }
 
   .author-section {
     background:
