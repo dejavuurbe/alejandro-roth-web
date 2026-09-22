@@ -19,7 +19,7 @@ import { site } from '../content/site';
 
       <div class="contact-links">
         {site.social.filter((item) => item.url).map((item) => (
-          <a class="button" href={item.url} target="_blank" rel="me noopener">
+          <a class="button secondary" href={item.url} target="_blank" rel="me noopener">
             {item.label}
           </a>
         ))}
@@ -34,20 +34,37 @@ import { site } from '../content/site';
     min-height: 72vh;
     display: grid;
     align-items: center;
+    background:
+      radial-gradient(circle at 82% 36%, rgba(79,169,209,.14), transparent 26rem);
   }
   .contact-card {
+    position: relative;
+    overflow: hidden;
     max-width: 980px;
-    padding: clamp(2rem, 5vw, 4rem);
-    border: 1px solid var(--color-border);
+    padding: clamp(2.2rem, 5vw, 4.5rem);
+    border: 1px solid rgba(79,169,209,.3);
     border-radius: var(--radius);
     background:
-      radial-gradient(circle at 90% 10%, rgba(76, 176, 210, .12), transparent 22rem),
-      var(--color-surface);
-    box-shadow: var(--shadow);
+      linear-gradient(145deg, rgba(255,255,255,.025), transparent 55%),
+      rgba(8,25,35,.82);
+    box-shadow: var(--shadow), var(--water-shadow);
+  }
+  .contact-card::after {
+    content: '';
+    position: absolute;
+    width: 420px;
+    height: 160px;
+    right: -100px;
+    bottom: -70px;
+    border-radius: 50%;
+    border: 1px solid rgba(158,220,243,.28);
+    transform: rotate(-16deg);
   }
   .contact-links {
+    position: relative;
+    z-index: 2;
     display: flex;
-    gap: .8rem;
+    gap: .9rem;
     flex-wrap: wrap;
     margin-top: 2.2rem;
   }
