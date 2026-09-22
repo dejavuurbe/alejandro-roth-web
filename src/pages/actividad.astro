@@ -63,10 +63,10 @@ import SocialIcon from '../components/SocialIcon.astro';
 
 <style>
   .activity-page {
-    min-height: calc(100vh - 76px);
+    min-height: var(--section-full);
     display: grid;
     align-items: center;
-    padding-block: clamp(1.8rem, 3.2vh, 2.8rem);
+    padding-block: var(--section-full-pad-y);
     background:
       radial-gradient(circle at 75% 18%, rgba(79,169,209,.11), transparent 25rem);
   }
