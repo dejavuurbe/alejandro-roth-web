@@ -45,7 +45,19 @@ const metadata = [
           </dl>
         )}
 
-        {book.buyUrl && <a class="button" href={book.buyUrl}>Dónde conseguirlo</a>}
+        {book.buyUrl && (
+          <div class="purchase">
+            <p class="purchase-label">Disponible online</p>
+            <a
+              class="button"
+              href={book.buyUrl}
+              target="_blank"
+              rel="noopener"
+            >
+              {book.buyLabel || 'Comprar el libro'}
+            </a>
+          </div>
+        )}
       </article>
     </div>
   </section>
@@ -121,6 +133,19 @@ const metadata = [
     height: 2px;
     margin-top: 1rem;
     background: var(--color-accent);
+  }
+  .purchase {
+    margin-top: 2rem;
+    padding-top: 1.4rem;
+    border-top: 1px solid rgba(79,169,209,.2);
+  }
+  .purchase-label {
+    margin-bottom: .8rem;
+    font-size: .82rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--color-water-bright);
   }
   dl { margin: 2rem 0; }
   dl div {
