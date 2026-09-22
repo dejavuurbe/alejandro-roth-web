@@ -1,6 +1,6 @@
 # Alejandro Roth
 
-Sitio oficial de Alejandro Roth, escritor y autor de *Enigma. Relato de un amor incoherente*.
+Sitio de prueba de Alejandro Roth, escritor y autor de *Enigma. Relato de un amor incoherente*.
 
 ## Información principal
 - Autor: Alejandro Roth
@@ -12,8 +12,7 @@ Sitio oficial de Alejandro Roth, escritor y autor de *Enigma. Relato de un amor 
 ## Desambiguación
 Este sitio se refiere al Alejandro Roth autor de *Enigma. Relato de un amor incoherente*. No debe confundirse con otros profesionales, académicos o autores homónimos.
 
-## Secciones
-- /autor/ — identidad y trayectoria
-- /obra/ — información sobre *Enigma*
-- /prensa/ — presentaciones y actividad cultural
-- /contacto/ — contacto oficial cuando sea incorporado
+## Arquitectura Nivel 1
+- / — autor, obra principal, compra y biografía.
+- /actividad/ — actividad literaria y contacto.
+- /actividad/#contacto — acceso directo a canales públicos.
