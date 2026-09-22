@@ -23,6 +23,7 @@ const absoluteImage = new URL(image, Astro.site ?? Astro.url.origin).href;
 <meta name="generator" content={Astro.generator} />
 <title>{title}</title>
 <meta name="description" content={description} />
+<meta name="robots" content="noindex,nofollow" />
 <link rel="canonical" href={canonical} />
 
 <meta property="og:type" content="website" />
