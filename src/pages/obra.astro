@@ -19,8 +19,11 @@ const metadata = [
   schema={[bookSchema(), faqSchema()]}
 >
   <section class="section book-page">
+    <div class="water-orbit orbit-one"></div>
+    <div class="water-orbit orbit-two"></div>
     <div class="container book-grid">
       <div class="cover-wrap">
+        <div class="cover-glow"></div>
         <img
           src={book.cover}
           alt={`Portada de ${book.title}`}
@@ -30,7 +33,7 @@ const metadata = [
       </div>
       <article>
         <p class="eyebrow">Libro</p>
-        <h1>{book.title}</h1>
+        <h1 class="enigma-title">{book.title}</h1>
         <p class="subtitle">{book.subtitle}</p>
         <p class="lead">{book.synopsis}</p>
 
@@ -64,30 +67,60 @@ const metadata = [
 </BaseLayout>
 
 <style>
-  .book-page { min-height: 72vh; display: grid; align-items: center; }
+  .book-page {
+    min-height: 72vh;
+    display: grid;
+    align-items: center;
+    background:
+      radial-gradient(circle at 20% 48%, rgba(79,169,209,.16), transparent 28rem),
+      linear-gradient(180deg, rgba(3,8,13,.3), rgba(6,19,28,.65));
+  }
   .book-grid {
     display: grid;
     gap: clamp(3rem, 7vw, 7rem);
     align-items: center;
   }
   .cover-wrap {
+    position: relative;
     display: flex;
     justify-content: center;
   }
+  .cover-glow {
+    position: absolute;
+    inset: 12% 10%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(79,169,209,.3), transparent 68%);
+    filter: blur(18px);
+  }
   img {
-    width: min(100%, 360px);
-    max-height: 560px;
+    position: relative;
+    z-index: 2;
+    width: min(100%, 370px);
+    max-height: 570px;
     object-fit: cover;
     border-radius: 10px;
-    box-shadow: var(--shadow);
-    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow), var(--water-shadow);
+    border: 1px solid rgba(158,220,243,.32);
   }
   article { max-width: 680px; }
+  .enigma-title {
+    font-family: var(--font-accent);
+    font-size: clamp(4.8rem, 8vw, 7.5rem);
+    line-height: .82;
+  }
   .subtitle {
-    margin: .8rem 0 1.2rem;
+    margin: 1rem 0 1.3rem;
     font-family: var(--font-display);
-    font-size: clamp(1.35rem, 2.2vw, 1.75rem);
-    color: var(--color-accent);
+    font-size: clamp(1.4rem, 2.3vw, 1.9rem);
+    color: var(--color-cream);
+  }
+  .subtitle::after {
+    content: '';
+    display: block;
+    width: 78px;
+    height: 2px;
+    margin-top: 1rem;
+    background: var(--color-accent);
   }
   dl { margin: 2rem 0; }
   dl div {
@@ -95,19 +128,39 @@ const metadata = [
     grid-template-columns: 100px 1fr;
     gap: 1rem;
     padding: .65rem 0;
-    border-bottom: 1px solid var(--color-border);
+    border-bottom: 1px solid rgba(79,169,209,.2);
   }
-  dt { font-weight: 700; }
+  dt { font-weight: 700; color: var(--color-cream); }
   dd { margin: 0; color: var(--color-muted); }
   .faq {
-    background: var(--color-surface);
-    border-top: 1px solid var(--color-border);
+    background: rgba(8,25,35,.64);
+    border-top: 1px solid rgba(79,169,209,.2);
   }
   .faq-inner { max-width: 1000px; }
   .faq-grid {
     display: grid;
     gap: 1.2rem;
     margin-top: 2rem;
+  }
+  .water-orbit {
+    position: absolute;
+    border: 1px solid rgba(79,169,209,.15);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .orbit-one {
+    width: 620px;
+    height: 250px;
+    left: -160px;
+    top: 20%;
+    transform: rotate(-18deg);
+  }
+  .orbit-two {
+    width: 520px;
+    height: 200px;
+    right: -140px;
+    bottom: 10%;
+    transform: rotate(20deg);
   }
   @media (min-width: 860px) {
     .book-grid { grid-template-columns: .85fr 1.15fr; }
