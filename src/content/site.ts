@@ -17,12 +17,12 @@ export const site = {
       'Alejandro Roth es escritor y autor de Enigma. Relato de un amor incoherente. Ha presentado su obra en espacios culturales del oeste del Gran Buenos Aires.',
     longBio:
       'Alejandro Roth es autor de Enigma. Relato de un amor incoherente. Su actividad literaria incluye presentaciones en La Casona Cultural, en Morón, y en la Biblioteca Popular Almafuerte, en Rafael Castillo, además de su vínculo con el circuito de Autores de La Matanza.',
-    photo: `${base}images/autor-placeholder.svg`,
+    photo: `${base}images/alejandro-roth-autor.jpg`,
   },
   featuredBook: {
     title: 'Enigma',
     subtitle: 'Relato de un amor incoherente',
-    cover: `${base}images/portada-placeholder.svg`,
+    cover: `${base}images/enigma-portada.jpg`,
     synopsis:
       'Una historia centrada en el drama generacional de las relaciones modernas y en cómo los duelos emocionales previos influyen en la construcción de nuevos vínculos.',
     genre: '',
