@@ -62,7 +62,19 @@ const base = import.meta.env.BASE_URL;
         <h2 class="enigma-title">{site.featuredBook.title}</h2>
         <p class="subtitle">{site.featuredBook.subtitle}</p>
         <p class="lead">{site.featuredBook.synopsis}</p>
-        <a class="button secondary" href={`${base}obra/`}>Ver la obra</a>
+        <div class="book-actions">
+          {site.featuredBook.buyUrl && (
+            <a
+              class="button"
+              href={site.featuredBook.buyUrl}
+              target="_blank"
+              rel="noopener"
+            >
+              Comprar el libro
+            </a>
+          )}
+          <a class="button secondary" href={`${base}obra/`}>Ver la obra</a>
+        </div>
       </div>
     </div>
   </section>
@@ -265,6 +277,13 @@ const base = import.meta.env.BASE_URL;
   }
 
   .subtitle::first-letter { color: var(--color-accent); }
+
+  .book-actions {
+    display: flex;
+    gap: .9rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+  }
 
   .author-strip {
     background:
