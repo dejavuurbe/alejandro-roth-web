@@ -1,10 +1,12 @@
+const base = import.meta.env.BASE_URL;
+
 export const site = {
   name: 'Alejandro Roth',
   role: 'Escritor',
   tagline: 'Autor de «Enigma. Relato de un amor incoherente».',
   description:
-    'Sitio oficial de Alejandro Roth, escritor y autor de Enigma. Relato de un amor incoherente.',
-  url: 'https://example.com',
+    'Sitio de prueba de Alejandro Roth, escritor y autor de Enigma. Relato de un amor incoherente.',
+  url: 'https://dejavuurbe.github.io/alejandro-roth-web',
   email: '',
   location: 'Buenos Aires, Argentina',
   social: [
@@ -15,14 +17,14 @@ export const site = {
       'Alejandro Roth es escritor y autor de Enigma. Relato de un amor incoherente. Ha presentado su obra en espacios culturales del oeste del Gran Buenos Aires.',
     longBio:
       'Alejandro Roth es autor de Enigma. Relato de un amor incoherente. Su actividad literaria incluye presentaciones en La Casona Cultural, en Morón, y en la Biblioteca Popular Almafuerte, en Rafael Castillo, además de su vínculo con el circuito de Autores de La Matanza.',
-    photo: '/images/autor-placeholder.svg',
+    photo: `${base}images/autor-placeholder.svg`,
   },
   featuredBook: {
     title: 'Enigma',
     subtitle: 'Relato de un amor incoherente',
-    cover: '/images/portada-placeholder.svg',
+    cover: `${base}images/portada-placeholder.svg`,
     synopsis:
-      'Enigma. Relato de un amor incoherente es la obra de Alejandro Roth que articula actualmente su presencia pública como autor. La sinopsis editorial completa se incorporará al recibir el material oficial.',
+      'Una historia centrada en el drama generacional de las relaciones modernas y en cómo los duelos emocionales previos influyen en la construcción de nuevos vínculos.',
     genre: '',
     year: '',
     pages: '',
@@ -36,14 +38,14 @@ export const site = {
       source: 'La Casona Cultural · Morón',
       url: '',
       description:
-        'Presentación de la obra en La Casona Cultural, en Morón.',
+        'Presentación de la obra en La Casona Cultural, Mendoza 109, Morón, acompañada por música en vivo y lectura de poesía.',
     },
     {
       title: 'Presentación de Enigma',
       source: 'Biblioteca Popular Almafuerte · Rafael Castillo',
-      url: '',
+      url: 'https://www.instagram.com/p/DcWUFv3vygW/',
       description:
-        'Presentación de la obra en la Biblioteca Popular Almafuerte, en Rafael Castillo.',
+        'Presentación de la novela en la Biblioteca Popular Almafuerte de Rafael Castillo, con actividad libre y gratuita.',
     },
     {
       title: 'Actividad literaria local',
@@ -60,9 +62,9 @@ export const site = {
         'Alejandro Roth es escritor y autor de Enigma. Relato de un amor incoherente, con actividad literaria en espacios culturales del oeste del Gran Buenos Aires.',
     },
     {
-      question: '¿Qué es Enigma. Relato de un amor incoherente?',
+      question: '¿De qué trata Enigma. Relato de un amor incoherente?',
       answer:
-        'Es la obra de Alejandro Roth que actualmente concentra su presencia pública como autor. La ficha editorial y la sinopsis oficial se incorporarán al sitio una vez validadas.',
+        'La obra aborda relaciones modernas atravesadas por duelos emocionales previos y examina cómo esas experiencias condicionan la construcción de nuevos vínculos.',
     },
   ],
 };
