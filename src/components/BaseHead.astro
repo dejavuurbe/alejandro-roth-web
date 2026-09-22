@@ -7,11 +7,12 @@ interface Props {
   schema?: Record<string, unknown> | Record<string, unknown>[];
 }
 
+const base = import.meta.env.BASE_URL;
 const {
   title,
   description,
   canonical = Astro.url.href,
-  image = '/images/social-placeholder.svg',
+  image = `${base}images/social-placeholder.svg`,
   schema,
 } = Astro.props;
 
@@ -35,8 +36,8 @@ const absoluteImage = new URL(image, Astro.site ?? Astro.url.origin).href;
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={absoluteImage} />
 
-<link rel="manifest" href="/site.webmanifest" />
-<meta name="theme-color" content="#f5f2ec" />
+<link rel="manifest" href={`${base}site.webmanifest`} />
+<meta name="theme-color" content="#081722" />
 
 {schema && (
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />
