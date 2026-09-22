@@ -1,54 +1,68 @@
 export const site = {
-  name: 'Nombre del autor',
-  role: 'Escritor/a',
-  tagline: 'Una frase breve que exprese su identidad autoral.',
+  name: 'Alejandro Roth',
+  role: 'Escritor',
+  tagline: 'Autor de «Enigma. Relato de un amor incoherente».',
   description:
-    'Descripción clara del autor, su obra y los temas centrales de su trabajo.',
+    'Sitio oficial de Alejandro Roth, escritor y autor de Enigma. Relato de un amor incoherente.',
   url: 'https://example.com',
-  email: 'contacto@example.com',
-  location: 'Ciudad, País',
+  email: '',
+  location: 'Buenos Aires, Argentina',
   social: [
-    { label: 'Instagram', url: '#' },
-    { label: 'Facebook', url: '#' },
+    { label: 'Instagram', url: 'https://www.instagram.com/ale_rorh/' },
   ],
   author: {
     shortBio:
-      'Biografía breve para la portada. Debe responder rápidamente quién es el autor y qué escribe.',
+      'Alejandro Roth es escritor y autor de Enigma. Relato de un amor incoherente. Ha presentado su obra en espacios culturales del oeste del Gran Buenos Aires.',
     longBio:
-      'Biografía extendida. Sustituir por información verificada, trayectoria, publicaciones y actividad cultural relevante.',
+      'Alejandro Roth es autor de Enigma. Relato de un amor incoherente. Su actividad literaria incluye presentaciones en La Casona Cultural, en Morón, y en la Biblioteca Popular Almafuerte, en Rafael Castillo, además de su vínculo con el circuito de Autores de La Matanza.',
     photo: '/images/autor-placeholder.svg',
   },
   featuredBook: {
-    title: 'Título de la obra',
-    subtitle: 'Subtítulo o frase de presentación',
+    title: 'Enigma',
+    subtitle: 'Relato de un amor incoherente',
     cover: '/images/portada-placeholder.svg',
     synopsis:
-      'Sinopsis breve orientada al lector. Debe explicar con claridad la propuesta del libro sin convertirse en una descripción genérica.',
-    genre: 'Género',
-    year: '2026',
-    pages: '000',
-    isbn: '000-0-00-000000-0',
-    publisher: 'Editorial / Independiente',
-    buyUrl: '#',
+      'Enigma. Relato de un amor incoherente es la obra de Alejandro Roth que articula actualmente su presencia pública como autor. La sinopsis editorial completa se incorporará al recibir el material oficial.',
+    genre: '',
+    year: '',
+    pages: '',
+    isbn: '',
+    publisher: '',
+    buyUrl: '',
   },
   press: [
     {
-      title: 'Entrevista o nota destacada',
-      source: 'Medio',
-      url: '#',
-      description: 'Contexto breve sobre la aparición.',
+      title: 'Presentación de Enigma',
+      source: 'La Casona Cultural · Morón',
+      url: '',
+      description:
+        'Presentación de la obra en La Casona Cultural, en Morón.',
+    },
+    {
+      title: 'Presentación de Enigma',
+      source: 'Biblioteca Popular Almafuerte · Rafael Castillo',
+      url: '',
+      description:
+        'Presentación de la obra en la Biblioteca Popular Almafuerte, en Rafael Castillo.',
+    },
+    {
+      title: 'Actividad literaria local',
+      source: 'Autores de La Matanza',
+      url: '',
+      description:
+        'Participación vinculada al circuito de autores y actividades literarias de La Matanza.',
     },
   ],
   faq: [
     {
-      question: '¿Quién es Nombre del autor?',
+      question: '¿Quién es Alejandro Roth?',
       answer:
-        'Respuesta directa y verificable, pensada también para buscadores y sistemas de respuesta.',
+        'Alejandro Roth es escritor y autor de Enigma. Relato de un amor incoherente, con actividad literaria en espacios culturales del oeste del Gran Buenos Aires.',
     },
     {
-      question: '¿De qué trata su obra principal?',
+      question: '¿Qué es Enigma. Relato de un amor incoherente?',
       answer:
-        'Respuesta breve que resume la propuesta de la obra sin reemplazar la sinopsis completa.',
+        'Es la obra de Alejandro Roth que actualmente concentra su presencia pública como autor. La ficha editorial y la sinopsis oficial se incorporarán al sitio una vez validadas.',
     },
   ],
 };
