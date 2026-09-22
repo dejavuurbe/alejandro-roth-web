@@ -60,7 +60,10 @@ const base = import.meta.env.BASE_URL;
       <div class="book-copy">
         <p class="eyebrow">Obra destacada</p>
         <h2 class="enigma-title">{site.featuredBook.title}</h2>
-        <p class="subtitle">{site.featuredBook.subtitle}</p>
+        <p class="subtitle">
+          <span class="subtitle-main">Relato de un amor</span>
+          <span class="subtitle-accent">incoherente</span>
+        </p>
         <p class="lead">{site.featuredBook.synopsis}</p>
         <div class="book-actions">
           {site.featuredBook.buyUrl && (
@@ -270,13 +273,27 @@ const base = import.meta.env.BASE_URL;
   }
 
   .subtitle {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: .45rem;
     margin: 0 0 1.35rem;
     color: var(--color-cream);
+  }
+
+  .subtitle-main {
     font-family: var(--font-display);
     font-size: clamp(1.35rem, 2.2vw, 1.8rem);
   }
 
-  .subtitle::first-letter { color: var(--color-accent); }
+  .subtitle-accent {
+    color: var(--color-accent);
+    font-family: var(--font-accent);
+    font-size: clamp(1.75rem, 2.8vw, 2.35rem);
+    font-weight: 600;
+    line-height: 1;
+    transform: rotate(-2deg);
+  }
 
   .book-actions {
     display: flex;
