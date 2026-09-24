@@ -37,10 +37,24 @@ export const site = {
   press: [
     {
       title: 'Presentación de Enigma',
+      source: 'La Casona Cultural · Morón',
+      url: '',
+      description:
+        'Presentación de la obra en La Casona Cultural, Mendoza 109, Morón, acompañada por música en vivo y lectura de poesía.',
+    },
+    {
+      title: 'Presentación de Enigma',
       source: 'Biblioteca Popular Almafuerte · Rafael Castillo',
       url: 'https://www.instagram.com/p/DcWUEv3vygW/',
       description:
         'Presentación de la novela en la Biblioteca Popular Almafuerte de Rafael Castillo. La publicación de la actividad funciona como fuente del registro.',
+    },
+    {
+      title: 'Actividad literaria local',
+      source: 'Autores de La Matanza',
+      url: '',
+      description:
+        'Participación de Alejandro Roth en el circuito de autores y actividades literarias de La Matanza.',
     },
   ],
 };
