@@ -4,15 +4,17 @@ import { site } from '../content/site';
 import { personSchema, bookSchema } from '../core/schema';
 
 const bookMeta = [
-  ['Género', site.featuredBook.genre],
-  ['Año', site.featuredBook.year],
+  ['Primera edición', site.featuredBook.year],
   ['Páginas', site.featuredBook.pages],
   ['ISBN', site.featuredBook.isbn],
-  ['Edición', site.featuredBook.publisher],
-].filter(([, value]) => value);
+  ['Clasificación', site.featuredBook.genre],
+  ['Formato impreso', '20 × 14 cm'],
+];
+const hotmartUrl = site.featuredBook.hotmartCheckoutUrl;
+const isHotmartUrl = /^https:\/\/pay\.hotmart\.com\//.test(hotmartUrl);
 ---
 <BaseLayout
-  title={`${site.name} | ${site.role}`}
+  title="Alejandro Roth, escritor argentino de Rafael Castillo | Enigma"
   description={site.description}
   schema={[personSchema(), bookSchema()]}
 >
@@ -23,7 +25,7 @@ const bookMeta = [
 
     <div class="container hero-grid">
       <div class="hero-copy">
-        <p class="eyebrow">Escritor · Buenos Aires</p>
+        <p class="eyebrow">Escritor argentino · Rafael Castillo, Buenos Aires</p>
         <h1>{site.name}</h1>
         <p class="lead hero-lead">
           Autor de <span class="book-name">Enigma</span>.
@@ -84,18 +86,27 @@ const bookMeta = [
           </dl>
         )}
 
-        {site.featuredBook.buyUrl && (
-          <div class="purchase">
+        <div class="purchase">
+          {isHotmartUrl ? (
             <a
               class="button"
-              href={site.featuredBook.buyUrl}
+              href={hotmartUrl}
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
             >
               {site.featuredBook.buyLabel || 'Adquirí tu ejemplar'}
             </a>
-          </div>
-        )}
+          ) : (
+            <button class="button purchase-pending" type="button" disabled aria-describedby="purchase-status">
+              {site.featuredBook.buyLabel}
+            </button>
+          )}
+          {!isHotmartUrl && <p class="purchase-status" id="purchase-status">Enlace de compra en preparación.</p>}
+        </div>
+        <p class="book-credits">
+          <span>Edición de autor</span>
+          <span>Prólogo: {site.featuredBook.foreword} · Ilustraciones: {site.featuredBook.illustrator}</span>
+        </p>
       </div>
     </div>
   </section>
@@ -109,8 +120,7 @@ const bookMeta = [
       <div>
         <p class="lead">{site.author.longBio}</p>
         <p class="author-note">
-          Su obra <strong>Enigma. Relato de un amor <span>incoherente</span></strong>
-          articula actualmente su presencia pública como autor y sus actividades literarias.
+          Es profesor de Historia y desarrolla su actividad profesional en educación.
         </p>
       </div>
     </div>
@@ -333,6 +343,30 @@ const bookMeta = [
 
   .purchase {
     margin-top: 1.4rem;
+  }
+
+  .purchase-pending {
+    opacity: .78;
+    cursor: not-allowed;
+  }
+
+  .purchase-status {
+    margin: .55rem 0 0;
+    font-size: .9rem;
+    color: var(--color-muted);
+  }
+
+  .book-credits {
+    display: grid;
+    gap: .2rem;
+    margin: 1rem 0 0;
+    color: var(--color-muted);
+    font-size: .88rem;
+  }
+
+  .book-credits span:first-child {
+    color: var(--color-cream);
+    font-weight: 600;
   }
 
   .author-section {

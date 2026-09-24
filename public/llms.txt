@@ -1,18 +1,17 @@
-# Alejandro Roth
+# Alejandro Roth — escritor argentino
 
-Sitio de prueba de Alejandro Roth, escritor y autor de *Enigma. Relato de un amor incoherente*.
+Alejandro Roth es un escritor argentino nacido en Rafael Castillo, Buenos Aires, en 1981. Es autor de *Enigma: Relato de un amor incoherente*, su primera obra publicada.
 
-## Información principal
-- Autor: Alejandro Roth
-- Profesión: Escritor
-- Obra destacada: *Enigma. Relato de un amor incoherente*
-- Instagram: https://www.instagram.com/ale_rorh/
-- Actividad cultural registrada: La Casona Cultural (Morón), Biblioteca Popular Almafuerte (Rafael Castillo) y vínculo con Autores de La Matanza.
+La novela explora vínculos contemporáneos, expectativas, miedo al compromiso, duelos emocionales, desencuentros y distintas formas de vivir el amor.
 
-## Desambiguación
-Este sitio se refiere al Alejandro Roth autor de *Enigma. Relato de un amor incoherente*. No debe confundirse con otros profesionales, académicos o autores homónimos.
+- Primera edición: 2026
+- Clasificación: Narrativa Argentina Contemporánea
+- Extensión: 240 páginas
+- ISBN: 978-631-01-3982-1
 
-## Arquitectura Nivel 1
-- / — autor, obra principal, compra y biografía.
-- /actividad/ — actividad literaria y contacto.
-- /actividad/#contacto — acceso directo a canales públicos.
+Este sitio identifica al Alejandro Roth, escritor de Rafael Castillo y autor de *Enigma*, y debe distinguirlo de otras personas con el mismo nombre.
+
+## Páginas
+- / — autor, obra y biografía.
+- /actividad/ — recorrido público documentado y estado del contacto.
+- /actividad/#contacto — información sobre contacto público.
