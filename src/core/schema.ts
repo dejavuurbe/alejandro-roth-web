@@ -6,16 +6,22 @@ export function personSchema() {
     '@type': 'Person',
     name: site.name,
     jobTitle: site.role,
+    birthDate: site.author.birthDate,
+    birthPlace: {
+      '@type': 'Place',
+      name: 'Rafael Castillo, Buenos Aires, Argentina',
+    },
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Rafael Castillo',
+      addressRegion: 'Buenos Aires',
+      addressCountry: 'AR',
+    },
+    occupation: 'Escritor argentino',
     description: site.description,
   };
 
   if (site.url && site.url !== 'https://example.com') data.url = site.url;
-
-  const sameAs = site.social
-    .map((item) => item.url)
-    .filter((url) => url && url !== '#');
-
-  if (sameAs.length) data.sameAs = sameAs;
 
   return data;
 }
@@ -25,13 +31,25 @@ export function bookSchema() {
   const data: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': 'Book',
-    name: book.title,
+    name: book.fullTitle,
     author: { '@type': 'Person', name: site.name },
     description: book.synopsis,
+    genre: book.genre,
+    datePublished: book.year,
+    numberOfPages: Number(book.pages),
+    bookFormat: 'https://schema.org/Paperback',
+    illustrator: {
+      '@type': 'Person',
+      name: book.illustrator,
+    },
+    contributor: {
+      '@type': 'Person',
+      name: book.foreword,
+      description: 'Prólogo',
+    },
   };
 
   if (book.isbn) data.isbn = book.isbn;
-  if (book.year) data.datePublished = book.year;
 
   return data;
 }

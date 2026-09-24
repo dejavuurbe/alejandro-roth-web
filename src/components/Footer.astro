@@ -1,22 +1,12 @@
 ---
 import { site } from '../content/site';
-import SocialIcon from './SocialIcon.astro';
 const year = new Date().getFullYear();
 ---
 <footer class="site-footer">
   <div class="container footer-grid">
     <div>
       <strong>{site.name}</strong>
-      <p>{site.role} · {site.location}</p>
-    </div>
-    <div class="links">
-      {site.social.filter((item) => item.url).map((item) => (
-        <a class="social-link" href={item.url} target="_blank" rel="me noopener">
-          <SocialIcon label={item.label} />
-          {item.label}
-        </a>
-      ))}
-      {site.email && <a href={`mailto:${site.email}`}>Correo</a>}
+      <p>{site.role} · Autor de Enigma · {site.location}</p>
     </div>
   </div>
   <div class="container legal">© {year} {site.name}</div>
@@ -34,16 +24,6 @@ const year = new Date().getFullYear();
     flex-wrap: wrap;
   }
   p, .legal { color: var(--color-muted); }
-  .social-link {
-    display: inline-flex;
-    align-items: center;
-    gap: .45rem;
-  }
-  .links {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
   .legal {
     margin-top: 2rem;
     font-size: .85rem;

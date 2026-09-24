@@ -133,6 +133,11 @@ p { margin-top: 0; }
   box-shadow: 0 14px 34px rgba(216, 52, 42, .25);
 }
 
+.button:disabled:hover {
+  transform: none;
+  box-shadow: 0 10px 28px rgba(216, 52, 42, .16);
+}
+
 .button.secondary {
   border-color: rgba(244, 234, 215, .72);
   background: var(--color-cream);

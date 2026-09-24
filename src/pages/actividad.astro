@@ -4,8 +4,8 @@ import { site } from '../content/site';
 import SocialIcon from '../components/SocialIcon.astro';
 ---
 <BaseLayout
-  title={`Actividad y contacto | ${site.name}`}
-  description={`Actividad literaria y canales públicos de ${site.name}.`}
+  title="Alejandro Roth, escritor argentino de Rafael Castillo | Actividad"
+  description="Recorrido público y fuente documentada de Alejandro Roth, escritor argentino de Rafael Castillo y autor de Enigma: Relato de un amor incoherente."
 >
   <section class="section activity-page">
     <div class="container activity-inner">
@@ -15,7 +15,7 @@ import SocialIcon from '../components/SocialIcon.astro';
           <h1>Presentaciones y recorrido público</h1>
         </div>
         <p class="lead">
-          Registro de espacios y actividades vinculadas con Alejandro Roth y su obra.
+          Una actividad pública documentada vinculada con Alejandro Roth y su primera novela.
         </p>
       </div>
 
@@ -26,11 +26,9 @@ import SocialIcon from '../components/SocialIcon.astro';
             <p class="eyebrow">{item.source}</p>
             <h2>{item.title}</h2>
             <p>{item.description}</p>
-            {item.url && (
-              <a class="source-link" href={item.url} target="_blank" rel="noopener">
-                <SocialIcon label="Instagram" /> Instagram →
-              </a>
-            )}
+            <a class="source-link" href={item.url} target="_blank" rel="noopener noreferrer">
+              <SocialIcon label="Instagram" /> Ver fuente de la actividad →
+            </a>
           </article>
         ))}
       </div>
@@ -41,25 +39,10 @@ import SocialIcon from '../components/SocialIcon.astro';
     <div class="container contact-card">
       <div>
         <p class="eyebrow">Contacto</p>
-        <h2>Canales públicos</h2>
+        <h2>Canal público por confirmar</h2>
         <p class="lead">
-          Para consultas, presentaciones, prensa o verificación de identidad autoral,
-          utiliza los canales oficiales disponibles.
+          El canal de contacto público está pendiente de confirmación por parte del autor. Se incorporará aquí cuando Alejandro indique qué dato desea publicar.
         </p>
-      </div>
-
-      <div class="contact-links">
-        {site.email && (
-          <a class="button" href={`mailto:${site.email}`}>
-            Correo oficial · {site.email}
-          </a>
-        )}
-        {site.social.filter((item) => item.url).map((item) => (
-          <a class="button secondary social-button" href={item.url} target="_blank" rel="me noopener">
-            <SocialIcon label={item.label} />
-            {item.label}
-          </a>
-        ))}
       </div>
     </div>
   </section>
@@ -180,19 +163,6 @@ import SocialIcon from '../components/SocialIcon.astro';
     border-radius: 50%;
     border: 1px solid rgba(158,220,243,.28);
     transform: rotate(-16deg);
-  }
-
-  .social-button {
-    gap: .5rem;
-  }
-
-  .contact-links {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    gap: .9rem;
-    flex-wrap: wrap;
-    margin-top: 2.2rem;
   }
 
   @media (min-width: 920px) {
