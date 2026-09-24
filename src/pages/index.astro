@@ -249,17 +249,25 @@ const isHotmartUrl = /^https:\/\/pay\.hotmart\.com\//.test(hotmartUrl);
   }
 
   .book-section {
+    min-height: var(--section-full);
+    display: grid;
+    align-items: center;
+    scroll-margin-top: var(--header-height);
+    padding-block: var(--section-full-pad-y);
     background:
       radial-gradient(circle at 22% 50%, rgba(79,169,209,.16), transparent 25rem),
       linear-gradient(180deg, #071720, #06131c);
     border-block: 1px solid rgba(79,169,209,.2);
   }
 
-  .book-grid { gap: clamp(4rem, 8vw, 8rem); }
+  .book-grid {
+    gap: clamp(3rem, 7vw, 7rem);
+    align-items: center;
+  }
 
   .book-visual {
     position: relative;
-    min-height: 590px;
+    min-height: 520px;
     display: grid;
     place-items: center;
   }
@@ -277,7 +285,7 @@ const isHotmartUrl = /^https:\/\/pay\.hotmart\.com\//.test(hotmartUrl);
     position: relative;
     z-index: 2;
     width: min(100%, 390px);
-    max-height: 570px;
+    max-height: min(540px, calc(100svh - var(--header-height) - 7rem));
     height: auto;
     object-fit: contain;
     border-radius: 10px;
@@ -406,6 +414,11 @@ const isHotmartUrl = /^https:\/\/pay\.hotmart\.com\//.test(hotmartUrl);
     .portrait-frame { width: min(82vw, 390px); }
     .ring-one { width: 88vw; max-width: 430px; }
     .ring-two { width: 94vw; max-width: 470px; }
+    .book-section {
+      min-height: auto;
+      display: block;
+      padding-block: 3.5rem;
+    }
     .book-visual { min-height: auto; }
   }
 </style>
