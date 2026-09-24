@@ -19,7 +19,7 @@ export const site = {
     title: 'Enigma',
     fullTitle: 'Enigma: Relato de un amor incoherente',
     subtitle: 'Relato de un amor incoherente',
-    cover: `${base}images/enigma-portada.webp`,
+    cover: `${base}images/enigma-portada.jpg`,
     synopsis:
       'Gael, empleado bancario recientemente divorciado, conoce a Perla, una supervisora introvertida. A partir de ese encuentro, la novela recorre vínculos contemporáneos marcados por expectativas, miedo al compromiso, duelos emocionales, desencuentros y distintas formas de vivir el amor.',
     genre: 'Narrativa Argentina Contemporánea',
