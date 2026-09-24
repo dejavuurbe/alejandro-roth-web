@@ -296,29 +296,29 @@ const isHotmartUrl = /^https:\/\/pay\.hotmart\.com\//.test(hotmartUrl);
 
   .enigma-title {
     font-family: var(--font-accent);
-    font-size: clamp(4rem, 7vw, 6.8rem);
+    font-size: clamp(3rem, 4.8vw, 4.8rem);
     line-height: .9;
-    margin-bottom: .7rem;
+    margin-bottom: .45rem;
   }
 
   .subtitle {
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
-    gap: .45rem;
-    margin: 0 0 1.35rem;
+    gap: .35rem;
+    margin: 0 0 1rem;
     color: var(--color-cream);
   }
 
   .subtitle-main {
     font-family: var(--font-display);
-    font-size: clamp(1.35rem, 2.2vw, 1.8rem);
+    font-size: clamp(1.1rem, 1.7vw, 1.45rem);
   }
 
   .subtitle-accent {
     color: var(--color-accent);
     font-family: var(--font-accent);
-    font-size: clamp(1.75rem, 2.8vw, 2.35rem);
+    font-size: clamp(1.45rem, 2.2vw, 1.95rem);
     font-weight: 600;
     line-height: 1;
     transform: rotate(-2deg);
@@ -327,8 +327,8 @@ const isHotmartUrl = /^https:\/\/pay\.hotmart\.com\//.test(hotmartUrl);
   .book-meta {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: .7rem 1.15rem;
-    margin: 1.15rem 0 0;
+    gap: .55rem 1rem;
+    margin: .9rem 0 0;
   }
 
   .book-meta div {
@@ -350,8 +350,15 @@ const isHotmartUrl = /^https:\/\/pay\.hotmart\.com\//.test(hotmartUrl);
     font-weight: 600;
   }
 
+  .book-copy .lead {
+    font-size: clamp(1rem, 1.25vw, 1.14rem);
+    line-height: 1.5;
+    margin-bottom: .9rem;
+    max-width: 34ch;
+  }
+
   .purchase {
-    margin-top: 1.4rem;
+    margin-top: 1rem;
   }
 
   .purchase-pending {
@@ -367,10 +374,10 @@ const isHotmartUrl = /^https:\/\/pay\.hotmart\.com\//.test(hotmartUrl);
 
   .book-credits {
     display: grid;
-    gap: .2rem;
-    margin: 1rem 0 0;
+    gap: .15rem;
+    margin: .75rem 0 0;
     color: var(--color-muted);
-    font-size: .88rem;
+    font-size: .82rem;
   }
 
   .book-credits span:first-child {
