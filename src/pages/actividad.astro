@@ -15,7 +15,7 @@ import SocialIcon from '../components/SocialIcon.astro';
           <h1>Presentaciones y recorrido público</h1>
         </div>
         <p class="lead">
-          Una actividad pública documentada vinculada con Alejandro Roth y su primera novela.
+          Tres referencias del recorrido público de Alejandro Roth y su primera novela en el oeste del Gran Buenos Aires.
         </p>
       </div>
 
@@ -26,9 +26,11 @@ import SocialIcon from '../components/SocialIcon.astro';
             <p class="eyebrow">{item.source}</p>
             <h2>{item.title}</h2>
             <p>{item.description}</p>
-            <a class="source-link" href={item.url} target="_blank" rel="noopener noreferrer">
-              <SocialIcon label="Instagram" /> Ver fuente de la actividad →
-            </a>
+            {item.url && (
+              <a class="source-link" href={item.url} target="_blank" rel="noopener noreferrer">
+                <SocialIcon label="Instagram" /> Ver fuente de la actividad →
+              </a>
+            )}
           </article>
         ))}
       </div>
@@ -83,7 +85,7 @@ import SocialIcon from '../components/SocialIcon.astro';
     display: grid;
     gap: 1.1rem;
     margin-top: 1.6rem;
-    max-width: 760px;
+    max-width: 1120px;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
   }
 
