@@ -143,8 +143,8 @@ const isHotmartUrl = /^https:\/\/pay\.hotmart\.com\//.test(hotmartUrl);
     position: absolute;
     z-index: -3;
     top: 2%;
-    right: -7%;
-    width: min(48vw, 660px);
+    right: -1%;
+    width: min(52vw, 700px);
     height: 98%;
     object-fit: cover;
     object-position: center;
@@ -401,7 +401,7 @@ const isHotmartUrl = /^https:\/\/pay\.hotmart\.com\//.test(hotmartUrl);
 
   @media (max-width: 899px) {
     .hero { min-height: auto; }
-    .cover-ghost { width: 80vw; opacity: .1; }
+    .cover-ghost { right: -7%; width: 80vw; opacity: .1; }
     .portrait-stage { min-height: 430px; }
     .portrait-frame { width: min(82vw, 390px); }
     .ring-one { width: 88vw; max-width: 430px; }
