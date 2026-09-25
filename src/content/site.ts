@@ -46,8 +46,8 @@ export const site = {
     email: 'sbvdrothalejandro@gmail.com',
     phoneDisplay: '11 5414 9673',
     phoneHref: '+541154149673',
-    instagramHandle: '@alerorohr',
-    instagramUrl: 'https://www.instagram.com/alerorohr/',
+    instagramHandle: '@ale_rorh',
+    instagramUrl: 'https://www.instagram.com/ale_rorh?stkn=cHQyNXZoMGJhcmNl',
     facebookUrl: 'https://www.facebook.com/share/1Ez6qkcntX/',
   },
   additionalActivity: [
