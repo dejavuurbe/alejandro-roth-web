@@ -19,6 +19,12 @@ export function personSchema() {
     },
     occupation: 'Escritor argentino',
     description: site.description,
+    email: site.contact.email,
+    telephone: site.contact.phoneHref,
+    sameAs: [
+      site.contact.instagramUrl,
+      site.contact.facebookUrl,
+    ],
   };
 
   if (site.url && site.url !== 'https://example.com') data.url = site.url;
