@@ -8,6 +8,12 @@ export const site = {
     'Alejandro Roth, escritor argentino de Rafael Castillo, Buenos Aires, y autor de Enigma: Relato de un amor incoherente, su primera obra publicada.',
   url: 'https://dejavuurbe.github.io/alejandro-roth-web',
   location: 'Rafael Castillo, Buenos Aires, Argentina',
+  footerLine: 'Escritor argentino · Autor de Enigma · Rafael Castillo, Buenos Aires, Argentina',
+  credit: {
+    enabled: true,
+    label: 'Diseño y desarrollo web por',
+    url: 'https://dejavuurbe.github.io/pierre-menard-web/proyecto/',
+  },
   author: {
     birthDate: '1981',
     shortBio: 'Escritor argentino de Rafael Castillo y autor de Enigma: Relato de un amor incoherente.',
