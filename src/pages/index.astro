@@ -97,11 +97,11 @@ const isHotmartUrl = /^https:\/\/pay\.hotmart\.com\//.test(hotmartUrl);
               {site.featuredBook.buyLabel || 'Adquirí tu ejemplar'}
             </a>
           ) : (
-            <a class="button" href={`${import.meta.env.BASE_URL}actividad/#contacto`}>
-              Consultar por Enigma
+            <a class="button" href={`${import.meta.env.BASE_URL}enigma/`}>
+              Quiero mi ejemplar
             </a>
           )}
-          {!isHotmartUrl && <p class="purchase-status" id="purchase-status">Disponible por contacto directo con el autor.</p>}
+          {!isHotmartUrl && <p class="purchase-status" id="purchase-status">Continuá para solicitar tu ejemplar directamente al autor.</p>}
         </div>
         <p class="book-credits">
           <span>Edición de autor</span>
