@@ -52,7 +52,8 @@
 - El sitio debe mantener preparado el flujo de compra externa para reemplazar o complementar este contacto cuando exista un enlace definitivo.
 - Correo público confirmado: **sbvdrothalejandro@gmail.com** (es la dirección desde la que Alejandro mantiene actualmente el intercambio por correo).
 - Redes públicas confirmadas para el sitio: **Facebook e Instagram**.
-- Instagram confirmado para esta etapa: **@alerorohr**.
+- Instagram confirmado para esta etapa: **@ale_rorh**.
+- Enlace confirmado de Instagram: **https://www.instagram.com/ale_rorh?stkn=cHQyNXZoMGJhcmNl**.
 - Facebook confirmado para esta etapa: **https://www.facebook.com/share/1Ez6qkcntX/**.
 - No publicar ni enlazar perfiles que no estén identificados de forma inequívoca.
 
