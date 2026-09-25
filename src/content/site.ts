@@ -19,6 +19,8 @@ export const site = {
     shortBio: 'Escritor argentino de Rafael Castillo y autor de Enigma: Relato de un amor incoherente.',
     longBio:
       'Alejandro Roth nació en Rafael Castillo, Buenos Aires, en 1981. Empezó a escribir durante la adolescencia y, alrededor de los cuarenta años, retomó esa vocación con mayor continuidad. Su recorrido desemboca en Enigma: Relato de un amor incoherente, su primera obra publicada; una historia que explora los vínculos y sus contradicciones.',
+    writingIdentity:
+      'En su escritura busca crear imágenes y musicalidad, con una atención especial a la descripción.',
     photo: `${base}images/alejandro-roth-autor.jpg`,
   },
   featuredBook: {
@@ -35,11 +37,23 @@ export const site = {
     publisher: 'Edición de autor',
     illustrator: 'Sofía Margot Roth',
     foreword: 'Gina Laura Cundari',
-    design: 'Laura I. Fleitas',
+    design: 'Laura Inés Fleitas',
     // Reemplazar solo este valor cuando Alejandro comparta su enlace definitivo pay.hotmart.com.
     hotmartCheckoutUrl: '',
     buyLabel: 'Comprar edición digital',
   },
+  contact: {
+    email: 'sbvdrothalejandro@gmail.com',
+    phoneDisplay: '11 5414 9673',
+    phoneHref: '+541154149673',
+    instagramHandle: '@alerorohr',
+    instagramUrl: 'https://www.instagram.com/alerorohr/',
+    facebookUrl: 'https://www.facebook.com/share/1Ez6qkcntX/',
+  },
+  additionalActivity: [
+    'Feria del Libro',
+    'Participación en antología',
+  ],
   press: [
     {
       title: 'Presentación de Enigma',
