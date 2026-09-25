@@ -34,6 +34,10 @@ import SocialIcon from '../components/SocialIcon.astro';
           </article>
         ))}
       </div>
+
+      <p class="additional-activity">
+        También confirmados para incorporar: {site.additionalActivity.join(' · ')}. La documentación específica está pendiente de sumar.
+      </p>
     </div>
   </section>
 
@@ -41,15 +45,17 @@ import SocialIcon from '../components/SocialIcon.astro';
     <div class="container contact-card">
       <div>
         <p class="eyebrow">Contacto</p>
-        <h2>Canal público por confirmar</h2>
+        <h2>Contacto con Alejandro Roth</h2>
         <p class="lead">
           Para consultas sobre Enigma, presentaciones o contacto con el autor, podés escribirle por correo o seguir sus redes públicas.
         </p>
         <p class="contact-label">Correo</p>
-        <a class="contact-email" href="mailto:sbvdrothalejandro@gmail.com">sbvdrothalejandro@gmail.com</a>
+        <a class="contact-email" href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
+        <p class="contact-label contact-label-secondary">Teléfono</p>
+        <a class="contact-phone" href={`tel:${site.contact.phoneHref}`}>{site.contact.phoneDisplay}</a>
         <div class="contact-socials">
-          <a href="https://www.instagram.com/alerorohr/" target="_blank" rel="noopener noreferrer">Instagram · @alerorohr</a>
-          <a href="https://www.facebook.com/share/1Ez6qkcntX/" target="_blank" rel="noopener noreferrer">Facebook</a>
+          <a href={site.contact.instagramUrl} target="_blank" rel="noopener noreferrer">Instagram · {site.contact.instagramHandle}</a>
+          <a href={site.contact.facebookUrl} target="_blank" rel="noopener noreferrer">Facebook</a>
         </div>
       </div>
     </div>
@@ -198,6 +204,32 @@ import SocialIcon from '../components/SocialIcon.astro';
 
   .contact-email:hover {
     color: var(--color-water-bright);
+  }
+
+  .contact-label-secondary {
+    margin-top: .9rem;
+  }
+
+  .contact-phone {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    color: var(--color-cream);
+    font-family: var(--font-display);
+    font-size: clamp(1.35rem, 2.2vw, 1.9rem);
+    line-height: 1.1;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(79,169,209,.45);
+  }
+
+  .contact-phone:hover {
+    color: var(--color-water-bright);
+  }
+
+  .additional-activity {
+    margin: 1rem 0 0;
+    color: var(--color-muted);
+    font-size: .92rem;
   }
 
   .contact-socials {
