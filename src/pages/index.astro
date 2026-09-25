@@ -97,15 +97,16 @@ const isHotmartUrl = /^https:\/\/pay\.hotmart\.com\//.test(hotmartUrl);
               {site.featuredBook.buyLabel || 'Adquirí tu ejemplar'}
             </a>
           ) : (
-            <button class="button purchase-pending" type="button" disabled aria-describedby="purchase-status">
-              {site.featuredBook.buyLabel}
-            </button>
+            <a class="button" href={`${import.meta.env.BASE_URL}actividad/#contacto`}>
+              Consultar por Enigma
+            </a>
           )}
-          {!isHotmartUrl && <p class="purchase-status" id="purchase-status">Enlace de compra en preparación.</p>}
+          {!isHotmartUrl && <p class="purchase-status" id="purchase-status">Disponible por contacto directo con el autor.</p>}
         </div>
         <p class="book-credits">
           <span>Edición de autor</span>
           <span>Prólogo: {site.featuredBook.foreword} · Ilustraciones: {site.featuredBook.illustrator}</span>
+          <span>Diseño de portada: {site.featuredBook.design}</span>
         </p>
       </div>
     </div>
@@ -120,7 +121,7 @@ const isHotmartUrl = /^https:\/\/pay\.hotmart\.com\//.test(hotmartUrl);
       <div>
         <p class="lead">{site.author.longBio}</p>
         <p class="author-note">
-          Es profesor de Historia y desarrolla su actividad profesional en educación.
+          {site.author.writingIdentity}
         </p>
       </div>
     </div>
