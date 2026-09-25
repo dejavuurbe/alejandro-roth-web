@@ -50,9 +50,11 @@
   - Teléfono: **11 5414 9673**.
   - Instagram: **@alerorohr**.
 - El sitio debe mantener preparado el flujo de compra externa para reemplazar o complementar este contacto cuando exista un enlace definitivo.
-- Correo público: **pendiente de confirmación exacta**. Alejandro respondió que se usen “las que tenés relacionadas conmigo”, pero no identificó una dirección concreta.
-- No publicar un correo supuesto ni reutilizar automáticamente una dirección privada sin confirmación expresa.
-- Redes/perfiles oficiales: usar únicamente los ya vinculados de forma inequívoca con Alejandro.
+- Correo público confirmado: **sbvdrothalejandro@gmail.com** (es la dirección desde la que Alejandro mantiene actualmente el intercambio por correo).
+- Redes públicas confirmadas para el sitio: **Facebook e Instagram**.
+- Instagram confirmado para esta etapa: **@alerorohr**.
+- Facebook: canal confirmado, pero **URL/perfil exacto pendiente de identificar o recibir**; no enlazar un perfil supuesto por la colisión de homónimos.
+- No publicar ni enlazar perfiles que no estén identificados de forma inequívoca.
 
 ## 6. Actividad y trayectoria a incorporar
 
@@ -84,7 +86,7 @@ No incorporar actividades nuevas como definitivas sin fuente o material verifica
 
 ## 8. Pendientes de confirmación
 
-- Correo público exacto.
+- URL/perfil exacto de Facebook.
 - Dominio o dirección web definitiva.
 - Confirmación explícita de quién otorga la aprobación final del sitio.
 - Acceso o documentación de Feria del Libro, antología y demás actividades que Alejandro quiere sumar.
