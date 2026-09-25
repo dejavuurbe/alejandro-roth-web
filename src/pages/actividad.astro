@@ -43,10 +43,14 @@ import SocialIcon from '../components/SocialIcon.astro';
         <p class="eyebrow">Contacto</p>
         <h2>Canal público por confirmar</h2>
         <p class="lead">
-          El canal de contacto público está pendiente de confirmación por parte del autor. Se incorporará aquí cuando Alejandro indique qué dato desea publicar.
+          Para consultas sobre Enigma, presentaciones o contacto con el autor, podés escribirle por correo o seguir sus redes públicas.
         </p>
-        <p class="contact-label">Correo de contacto · ejemplo de maquetación</p>
-        <a class="contact-email" href="mailto:aleroth@web.com.ar">aleroth@web.com.ar</a>
+        <p class="contact-label">Correo</p>
+        <a class="contact-email" href="mailto:sbvdrothalejandro@gmail.com">sbvdrothalejandro@gmail.com</a>
+        <div class="contact-socials">
+          <a href="https://www.instagram.com/alerorohr/" target="_blank" rel="noopener noreferrer">Instagram · @alerorohr</a>
+          <span>Facebook · enlace pendiente de incorporar</span>
+        </div>
       </div>
     </div>
   </section>
@@ -193,6 +197,26 @@ import SocialIcon from '../components/SocialIcon.astro';
   }
 
   .contact-email:hover {
+    color: var(--color-water-bright);
+  }
+
+  .contact-socials {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .8rem 1.25rem;
+    margin-top: 1rem;
+  }
+
+  .contact-socials a,
+  .contact-socials span {
+    color: var(--color-muted);
+    font-size: .95rem;
+    text-decoration: none;
+  }
+
+  .contact-socials a:hover {
     color: var(--color-water-bright);
   }
 
