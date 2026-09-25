@@ -9,5 +9,9 @@ export default defineConfig({
   base,
   output: 'static',
   trailingSlash: 'always',
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: 'viewport',
+  },
   integrations: [sitemap()],
 });
