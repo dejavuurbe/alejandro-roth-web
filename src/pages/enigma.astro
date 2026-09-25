@@ -1,0 +1,160 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../content/site';
+
+const whatsappUrl = 'https://wa.me/541154149673?text=Hola%20Alejandro%2C%20quiero%20tener%20mi%20ejemplar%20de%20Enigma.';
+---
+<BaseLayout
+  title="Quiero mi ejemplar de Enigma | Alejandro Roth"
+  description="Contacto directo con Alejandro Roth para solicitar un ejemplar de Enigma: Relato de un amor incoherente."
+>
+  <section class="section order-page">
+    <div class="container order-grid">
+      <div class="book-side">
+        <div class="book-glow"></div>
+        <img
+          class="cover"
+          src={site.featuredBook.cover}
+          alt={`Portada de ${site.featuredBook.fullTitle}`}
+          width="1103"
+          height="1536"
+        />
+      </div>
+
+      <div class="order-copy">
+        <p class="eyebrow">Gracias por llegar hasta acá</p>
+        <h1>Tu ejemplar de <span>Enigma</span> está a un mensaje de distancia.</h1>
+
+        <p class="lead">
+          Si querés tener tu propio ejemplar de <strong>Enigma: Relato de un amor incoherente</strong>,
+          contactá directamente a Alejandro por WhatsApp.
+        </p>
+
+        <p class="note">
+          Al tocar el botón se abrirá una conversación con un mensaje preparado. Podés modificarlo antes de enviarlo.
+        </p>
+
+        <a class="button whatsapp-button" href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+          Pedir Enigma por WhatsApp
+        </a>
+
+        <p class="alternative">
+          También podés escribir a <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .order-page {
+    min-height: var(--section-full);
+    display: grid;
+    align-items: center;
+    padding-block: var(--section-full-pad-y);
+    background:
+      radial-gradient(circle at 24% 48%, rgba(79,169,209,.16), transparent 25rem),
+      linear-gradient(180deg, #06131c, #03080d);
+  }
+
+  .order-grid {
+    display: grid;
+    align-items: center;
+    gap: clamp(3rem, 8vw, 7rem);
+  }
+
+  .book-side {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: 520px;
+  }
+
+  .book-glow {
+    position: absolute;
+    width: 430px;
+    height: 430px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(79,169,209,.28), transparent 68%);
+    filter: blur(10px);
+  }
+
+  .cover {
+    position: relative;
+    z-index: 2;
+    width: min(100%, 390px);
+    max-height: min(540px, calc(100svh - var(--header-height) - 7rem));
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    border: 1px solid rgba(158,220,243,.28);
+    box-shadow: 0 28px 70px rgba(0,0,0,.55), 0 0 45px rgba(79,169,209,.12);
+  }
+
+  .order-copy {
+    max-width: 620px;
+  }
+
+  .order-copy h1 {
+    font-size: clamp(3rem, 5vw, 5.25rem);
+    line-height: .95;
+    margin-bottom: 1.2rem;
+  }
+
+  .order-copy h1 span {
+    font-family: var(--font-accent);
+    color: var(--color-cream);
+  }
+
+  .order-copy .lead {
+    max-width: 40ch;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .note {
+    max-width: 48ch;
+    margin: 0 0 1.4rem;
+    color: var(--color-muted);
+    font-size: .95rem;
+  }
+
+  .whatsapp-button {
+    min-height: 54px;
+    padding-inline: 1.5rem;
+    font-size: 1rem;
+  }
+
+  .alternative {
+    margin: 1.2rem 0 0;
+    color: var(--color-muted);
+    font-size: .92rem;
+  }
+
+  .alternative a {
+    color: var(--color-cream);
+  }
+
+  @media (min-width: 900px) {
+    .order-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 899px) {
+    .order-page {
+      min-height: auto;
+      display: block;
+      padding-block: 3.5rem;
+    }
+
+    .book-side {
+      min-height: auto;
+      margin-bottom: 2.5rem;
+    }
+
+    .cover {
+      max-height: 520px;
+    }
+  }
+</style>
