@@ -47,16 +47,20 @@ import SocialIcon from '../components/SocialIcon.astro';
         <p class="eyebrow">Contacto</p>
         <h2>Contacto con Alejandro Roth</h2>
         <p class="lead">
-          Para consultas sobre Enigma, presentaciones o contacto con el autor, podés escribirle por correo o seguir sus redes públicas.
+          Si llegaste hasta acá desde una búsqueda o una recomendación, podés seguir el recorrido de Alejandro en sus redes o escribirle por correo.
         </p>
+        <div class="contact-socials contact-socials-primary">
+          <a class="social-cta" href={site.contact.instagramUrl} target="_blank" rel="noopener noreferrer">
+            <span class="social-name">Instagram</span>
+            <span class="social-detail">{site.contact.instagramHandle}</span>
+          </a>
+          <a class="social-cta" href={site.contact.facebookUrl} target="_blank" rel="noopener noreferrer">
+            <span class="social-name">Facebook</span>
+            <span class="social-detail">Seguir a Alejandro Roth</span>
+          </a>
+        </div>
         <p class="contact-label">Correo</p>
         <a class="contact-email" href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
-        <p class="contact-label contact-label-secondary">Teléfono</p>
-        <a class="contact-phone" href={`tel:${site.contact.phoneHref}`}>{site.contact.phoneDisplay}</a>
-        <div class="contact-socials">
-          <a href={site.contact.instagramUrl} target="_blank" rel="noopener noreferrer">Instagram · {site.contact.instagramHandle}</a>
-          <a href={site.contact.facebookUrl} target="_blank" rel="noopener noreferrer">Facebook</a>
-        </div>
       </div>
     </div>
   </section>
@@ -206,26 +210,6 @@ import SocialIcon from '../components/SocialIcon.astro';
     color: var(--color-water-bright);
   }
 
-  .contact-label-secondary {
-    margin-top: .9rem;
-  }
-
-  .contact-phone {
-    position: relative;
-    z-index: 2;
-    display: inline-block;
-    color: var(--color-cream);
-    font-family: var(--font-display);
-    font-size: clamp(1.35rem, 2.2vw, 1.9rem);
-    line-height: 1.1;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(79,169,209,.45);
-  }
-
-  .contact-phone:hover {
-    color: var(--color-water-bright);
-  }
-
   .additional-activity {
     margin: 1rem 0 0;
     color: var(--color-muted);
@@ -241,15 +225,50 @@ import SocialIcon from '../components/SocialIcon.astro';
     margin-top: 1rem;
   }
 
-  .contact-socials a,
-  .contact-socials span {
-    color: var(--color-muted);
-    font-size: .95rem;
-    text-decoration: none;
+  .contact-socials-primary {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 1.4rem 0 1.6rem;
   }
 
-  .contact-socials a:hover {
-    color: var(--color-water-bright);
+  .social-cta {
+    display: grid;
+    gap: .15rem;
+    padding: 1rem 1.1rem;
+    border: 1px solid rgba(79,169,209,.28);
+    border-radius: 14px;
+    background: rgba(255,255,255,.02);
+    color: var(--color-cream);
+    text-decoration: none;
+    transition: transform .18s ease, border-color .18s ease, background .18s ease;
+  }
+
+  .social-cta:hover {
+    transform: translateY(-2px);
+    border-color: rgba(158,220,243,.6);
+    background: rgba(79,169,209,.07);
+  }
+
+  .social-name {
+    font-family: var(--font-display);
+    font-size: clamp(1.35rem, 2.2vw, 1.8rem);
+    line-height: 1.05;
+  }
+
+  .social-detail {
+    color: var(--color-muted);
+    font-size: .9rem;
+  }
+
+  @media (max-width: 640px) {
+    .contact-socials-primary {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-email {
+      font-size: clamp(1.25rem, 6vw, 1.65rem);
+      overflow-wrap: anywhere;
+    }
   }
 
   @media (min-width: 920px) {
