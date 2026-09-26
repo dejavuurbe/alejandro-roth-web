@@ -36,10 +36,14 @@ const isHotmartUrl = /^https:\/\/pay\.hotmart\.com\//.test(hotmartUrl);
           Pedir Enigma por WhatsApp
         </a>
 
-        {isHotmartUrl && (
+        {isHotmartUrl ? (
           <a class="button digital-button" href={hotmartUrl} target="_blank" rel="noopener noreferrer">
             Quiero mi copia digital
           </a>
+        ) : (
+          <span class="button digital-button digital-preview" aria-disabled="true">
+            Quiero mi copia digital
+          </span>
         )}
       </div>
     </div>
@@ -120,6 +124,11 @@ const isHotmartUrl = /^https:\/\/pay\.hotmart\.com\//.test(hotmartUrl);
 
   .digital-button {
     margin-top: .9rem;
+  }
+
+  .digital-preview {
+    opacity: .72;
+    cursor: default;
   }
 
   @media (min-width: 900px) {
