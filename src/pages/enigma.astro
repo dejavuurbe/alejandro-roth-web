@@ -3,6 +3,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { site } from '../content/site';
 
 const whatsappUrl = 'https://wa.me/541154149673?text=Hola%20Alejandro%2C%20quiero%20tener%20mi%20ejemplar%20de%20Enigma.';
+const hotmartUrl = site.featuredBook.hotmartCheckoutUrl;
+const isHotmartUrl = /^https:\/\/pay\.hotmart\.com\//.test(hotmartUrl);
 ---
 <BaseLayout
   title="Quiero mi ejemplar de Enigma | Alejandro Roth"
@@ -34,9 +36,11 @@ const whatsappUrl = 'https://wa.me/541154149673?text=Hola%20Alejandro%2C%20quier
           Pedir Enigma por WhatsApp
         </a>
 
-        <p class="alternative">
-          También podés escribir a <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>.
-        </p>
+        {isHotmartUrl && (
+          <a class="button digital-button" href={hotmartUrl} target="_blank" rel="noopener noreferrer">
+            Quiero mi copia digital
+          </a>
+        )}
       </div>
     </div>
   </section>
@@ -114,14 +118,8 @@ const whatsappUrl = 'https://wa.me/541154149673?text=Hola%20Alejandro%2C%20quier
     font-size: 1rem;
   }
 
-  .alternative {
-    margin: 1.2rem 0 0;
-    color: var(--color-muted);
-    font-size: .92rem;
-  }
-
-  .alternative a {
-    color: var(--color-cream);
+  .digital-button {
+    margin-top: .9rem;
   }
 
   @media (min-width: 900px) {
