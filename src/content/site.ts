@@ -28,8 +28,10 @@ export const site = {
     fullTitle: 'Enigma: Relato de un amor incoherente',
     subtitle: 'Relato de un amor incoherente',
     cover: `${base}images/enigma-portada.jpg`,
+    hook:
+      '¿Qué pasa cuando dos personas se encuentran y aman de maneras distintas?',
     synopsis:
-      'Gael, empleado bancario recientemente divorciado, conoce a Perla, una supervisora introvertida. A partir de ese encuentro, la novela recorre vínculos contemporáneos marcados por expectativas, miedo al compromiso, duelos emocionales, desencuentros y distintas formas de vivir el amor.',
+      'Gael, recién divorciado, conoce a Perla, una supervisora introvertida. Enigma recorre expectativas, desencuentros, miedo al compromiso y duelo emocional. Una novela para quienes se interesan por las contradicciones de los vínculos contemporáneos.',
     genre: 'Narrativa Argentina Contemporánea',
     year: '2026',
     pages: '240',
