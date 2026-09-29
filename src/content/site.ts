@@ -31,7 +31,7 @@ export const site = {
     hook:
       '¿Qué pasa cuando dos personas se encuentran y aman de maneras distintas?',
     synopsis:
-      'Gael, recién divorciado, conoce a Perla, una supervisora introvertida. Enigma recorre expectativas, desencuentros, miedo al compromiso y duelo emocional. Una novela para quienes se interesan por las contradicciones de los vínculos contemporáneos.',
+      'Gael, separado y con su duelo ya atravesado, conoce a Perla, una supervisora introvertida. Enigma recorre expectativas, desencuentros, miedo al compromiso y tiempos emocionales distintos. Una novela para quienes se interesan por las contradicciones de los vínculos contemporáneos.',
     genre: 'Narrativa Argentina Contemporánea',
     year: '2026',
     pages: '240',
