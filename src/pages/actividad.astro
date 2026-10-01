@@ -41,26 +41,23 @@ import SocialIcon from '../components/SocialIcon.astro';
     </div>
   </section>
 
-  <section class="section contact-page" id="contacto">
-    <div class="container contact-card">
-      <div>
+  <section class="contact-page" id="contacto">
+    <div class="container contact-compact">
+      <div class="contact-title">
         <p class="eyebrow">Contacto</p>
-        <h2>Contacto con Alejandro Roth</h2>
-        <p class="lead">
-          Si llegaste hasta acá desde una búsqueda o una recomendación, podés seguir el recorrido de Alejandro en sus redes o escribirle por correo.
-        </p>
-        <div class="contact-socials contact-socials-primary">
-          <a class="social-cta" href={site.contact.instagramUrl} target="_blank" rel="noopener noreferrer">
-            <span class="social-name">Instagram</span>
-            <span class="social-detail">{site.contact.instagramHandle}</span>
-          </a>
-          <a class="social-cta" href={site.contact.facebookUrl} target="_blank" rel="noopener noreferrer">
-            <span class="social-name">Facebook</span>
-            <span class="social-detail">Seguir a Alejandro Roth</span>
-          </a>
-        </div>
-        <p class="contact-label">Correo</p>
-        <a class="contact-email" href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
+        <h2>Alejandro Roth</h2>
+      </div>
+
+      <div class="contact-links">
+        <a href={site.contact.instagramUrl} target="_blank" rel="noopener noreferrer">
+          Instagram <span>{site.contact.instagramHandle}</span>
+        </a>
+        <a href={site.contact.facebookUrl} target="_blank" rel="noopener noreferrer">
+          Facebook
+        </a>
+        <a href={`mailto:${site.contact.email}`}>
+          Correo <span>{site.contact.email}</span>
+        </a>
       </div>
     </div>
   </section>
@@ -153,61 +150,49 @@ import SocialIcon from '../components/SocialIcon.astro';
   }
 
   .contact-page {
-    display: grid;
-    align-items: center;
     border-top: 1px solid rgba(79,169,209,.2);
-    background:
-      radial-gradient(circle at 82% 36%, rgba(79,169,209,.14), transparent 26rem);
+    background: rgba(3,8,13,.72);
   }
 
-  .contact-card {
-    position: relative;
-    overflow: hidden;
-    max-width: 980px;
-    padding: clamp(2.2rem, 5vw, 4.5rem);
-    border: 1px solid rgba(79,169,209,.3);
-    border-radius: var(--radius);
-    background:
-      linear-gradient(145deg, rgba(255,255,255,.025), transparent 55%),
-      rgba(8,25,35,.82);
-    box-shadow: var(--shadow), var(--water-shadow);
+  .contact-compact {
+    display: grid;
+    gap: 1.4rem 3rem;
+    align-items: center;
+    padding-block: 1.5rem 1.7rem;
   }
 
-  .contact-card::after {
-    content: '';
-    position: absolute;
-    width: 420px;
-    height: 160px;
-    right: -100px;
-    bottom: -70px;
-    border-radius: 50%;
-    border: 1px solid rgba(158,220,243,.28);
-    transform: rotate(-16deg);
+  .contact-title .eyebrow {
+    margin-bottom: .2rem;
   }
 
-  .contact-label {
-    margin: 1.5rem 0 .3rem;
-    font-size: .76rem;
-    font-weight: 700;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: var(--color-water-bright);
+  .contact-title h2 {
+    margin: 0;
+    font-size: clamp(1.55rem, 2.1vw, 2.15rem);
   }
 
-  .contact-email {
-    position: relative;
-    z-index: 2;
-    display: inline-block;
+  .contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem 1.5rem;
+    align-items: center;
+  }
+
+  .contact-links a {
     color: var(--color-cream);
-    font-family: var(--font-display);
-    font-size: clamp(1.7rem, 3vw, 2.5rem);
-    line-height: 1.1;
     text-decoration: none;
-    border-bottom: 1px solid var(--color-accent);
+    font-weight: 700;
+    border-bottom: 1px solid rgba(216,52,42,.7);
+    padding-bottom: .15rem;
   }
 
-  .contact-email:hover {
+  .contact-links a:hover {
     color: var(--color-water-bright);
+  }
+
+  .contact-links span {
+    margin-left: .35rem;
+    color: var(--color-muted);
+    font-weight: 500;
   }
 
   .additional-activity {
@@ -216,58 +201,20 @@ import SocialIcon from '../components/SocialIcon.astro';
     font-size: .92rem;
   }
 
-  .contact-socials {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    flex-wrap: wrap;
-    gap: .8rem 1.25rem;
-    margin-top: 1rem;
-  }
-
-  .contact-socials-primary {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    margin: 1.4rem 0 1.6rem;
-  }
-
-  .social-cta {
-    display: grid;
-    gap: .15rem;
-    padding: 1rem 1.1rem;
-    border: 1px solid rgba(79,169,209,.28);
-    border-radius: 14px;
-    background: rgba(255,255,255,.02);
-    color: var(--color-cream);
-    text-decoration: none;
-    transition: transform .18s ease, border-color .18s ease, background .18s ease;
-  }
-
-  .social-cta:hover {
-    transform: translateY(-2px);
-    border-color: rgba(158,220,243,.6);
-    background: rgba(79,169,209,.07);
-  }
-
-  .social-name {
-    font-family: var(--font-display);
-    font-size: clamp(1.35rem, 2.2vw, 1.8rem);
-    line-height: 1.05;
-  }
-
-  .social-detail {
-    color: var(--color-muted);
-    font-size: .9rem;
-  }
-
   @media (max-width: 640px) {
-    .contact-socials-primary {
-      grid-template-columns: 1fr;
+    .contact-links {
+      display: grid;
+      gap: .65rem;
     }
 
-    .contact-email {
-      font-size: clamp(1.25rem, 6vw, 1.65rem);
+    .contact-links a {
+      width: fit-content;
       overflow-wrap: anywhere;
+    }
+
+    .contact-links span {
+      display: block;
+      margin: .15rem 0 0;
     }
   }
 
@@ -276,6 +223,9 @@ import SocialIcon from '../components/SocialIcon.astro';
       grid-template-columns: 1.15fr .85fr;
     }
 
+    .contact-compact {
+      grid-template-columns: .65fr 1.35fr;
+    }
   }
 
   @media (max-width: 919px) {
