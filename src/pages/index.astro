@@ -12,6 +12,7 @@ const bookMeta = [
 ];
 const hotmartUrl = site.featuredBook.hotmartCheckoutUrl;
 const isHotmartUrl = /^https:\/\/pay\.hotmart\.com\//.test(hotmartUrl);
+const bioParts = site.author.longBio.split(/(incoherente)/gi);
 ---
 <BaseLayout
   title="Alejandro Roth, escritor argentino de Rafael Castillo | Enigma"
@@ -30,7 +31,7 @@ const isHotmartUrl = /^https:\/\/pay\.hotmart\.com\//.test(hotmartUrl);
         <p class="lead hero-lead">
           Autor de <span class="book-name">Enigma</span>.
           <span class="cream">Relato de un amor</span>
-          <span class="red">incoherente</span>.
+          <span class="red incoherente-hover">incoherente</span>.
         </p>
         <div class="actions">
           <a class="button secondary" href="#obra">Conocer Enigma</a>
@@ -71,7 +72,7 @@ const isHotmartUrl = /^https:\/\/pay\.hotmart\.com\//.test(hotmartUrl);
         <h2 class="enigma-title">{site.featuredBook.title}</h2>
         <p class="subtitle">
           <span class="subtitle-main">Relato de un amor</span>
-          <span class="subtitle-accent">incoherente</span>
+          <span class="subtitle-accent incoherente-hover">incoherente</span>
         </p>
         <p class="book-hook">{site.featuredBook.hook}</p>
         <p class="lead">{site.featuredBook.synopsis}</p>
@@ -119,7 +120,13 @@ const isHotmartUrl = /^https:\/\/pay\.hotmart\.com\//.test(hotmartUrl);
         <h2>Sobre Alejandro Roth</h2>
       </div>
       <div>
-        <p class="lead">{site.author.longBio}</p>
+        <p class="lead">
+          {bioParts.map((part) =>
+            part.toLowerCase() === 'incoherente'
+              ? <span class="incoherente-hover">{part}</span>
+              : part
+          )}
+        </p>
         <p class="author-note">
           {site.author.writingIdentity}
         </p>
@@ -202,6 +209,18 @@ const isHotmartUrl = /^https:\/\/pay\.hotmart\.com\//.test(hotmartUrl);
     color: var(--color-accent);
     font-family: var(--font-accent);
     font-size: 1.3em;
+  }
+
+  .incoherente-hover {
+    display: inline-block;
+    transform-origin: center;
+    transition: transform .2s ease, text-shadow .2s ease, color .2s ease;
+  }
+
+  .incoherente-hover:hover {
+    transform: translateY(-2px) scale(1.09);
+    color: var(--color-accent);
+    text-shadow: 0 0 16px rgba(216,52,42,.42);
   }
 
   .portrait-stage {
