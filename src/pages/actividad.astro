@@ -7,6 +7,14 @@ import SocialIcon from '../components/SocialIcon.astro';
   title="Alejandro Roth, escritor argentino de Rafael Castillo | Actividad"
   description="Recorrido público y fuente documentada de Alejandro Roth, escritor argentino de Rafael Castillo y autor de Enigma: Relato de un amor incoherente."
 >
+  <section class="section stories-page" id="relatos">
+    <div class="container stories-inner">
+      <p class="eyebrow">Muestra de escritura</p>
+      <h1>Relatos cortos</h1>
+      <div class="stories-space" aria-label="Espacio reservado para relatos cortos"></div>
+    </div>
+  </section>
+
   <section class="section activity-page">
     <div class="container activity-inner">
       <div class="activity-head">
@@ -64,6 +72,35 @@ import SocialIcon from '../components/SocialIcon.astro';
 </BaseLayout>
 
 <style>
+  .stories-page {
+    min-height: var(--section-full);
+    display: grid;
+    align-items: center;
+    padding-block: var(--section-full-pad-y);
+    border-bottom: 1px solid rgba(79,169,209,.2);
+    background:
+      radial-gradient(circle at 20% 35%, rgba(79,169,209,.12), transparent 24rem),
+      linear-gradient(180deg, #041018, #06131c);
+  }
+
+  .stories-inner {
+    max-width: 1120px;
+  }
+
+  .stories-page h1 {
+    margin-bottom: 1.4rem;
+    font-size: clamp(3rem, 5vw, 5rem);
+  }
+
+  .stories-space {
+    min-height: clamp(280px, 42vh, 430px);
+    border: 1px solid rgba(79,169,209,.28);
+    border-radius: var(--radius);
+    background:
+      linear-gradient(145deg, rgba(255,255,255,.02), transparent 55%),
+      rgba(8,25,35,.46);
+  }
+
   .activity-page {
     min-height: var(--section-full);
     display: grid;
