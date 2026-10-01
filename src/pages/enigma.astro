@@ -28,7 +28,7 @@ const isHotmartUrl = /^https:\/\/pay\.hotmart\.com\//.test(hotmartUrl);
         <h1>Tu ejemplar de <span>Enigma</span> está a un mensaje de distancia.</h1>
 
         <p class="lead">
-          Si querés tener tu propio ejemplar de <strong>Enigma: Relato de un amor incoherente</strong>,
+          Si querés tener tu propio ejemplar de <strong>Enigma: Relato de un amor <span class="incoherente-hover">incoherente</span></strong>,
           contactá directamente a Alejandro por WhatsApp.
         </p>
 
@@ -121,6 +121,18 @@ const isHotmartUrl = /^https:\/\/pay\.hotmart\.com\//.test(hotmartUrl);
     max-width: 40ch;
     line-height: 1.5;
     margin-bottom: 1rem;
+  }
+
+  .incoherente-hover {
+    display: inline-block;
+    transform-origin: center;
+    transition: transform .2s ease, text-shadow .2s ease, color .2s ease;
+  }
+
+  .incoherente-hover:hover {
+    transform: translateY(-2px) scale(1.09);
+    color: var(--color-accent);
+    text-shadow: 0 0 16px rgba(216,52,42,.42);
   }
 
   .whatsapp-button {
