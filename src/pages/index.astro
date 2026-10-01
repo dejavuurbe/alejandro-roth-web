@@ -293,6 +293,13 @@ const isHotmartUrl = /^https:\/\/pay\.hotmart\.com\//.test(hotmartUrl);
     box-shadow: 0 28px 70px rgba(0,0,0,.55), 0 0 45px rgba(79,169,209,.12);
     border: 1px solid rgba(158,220,243,.28);
     transform: none;
+    transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+  }
+
+  .cover:hover {
+    transform: translateY(-8px) scale(1.025);
+    box-shadow: 0 34px 85px rgba(0,0,0,.62), 0 0 58px rgba(79,169,209,.2);
+    border-color: rgba(158,220,243,.5);
   }
 
   .enigma-title {
