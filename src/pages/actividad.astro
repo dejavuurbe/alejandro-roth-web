@@ -11,7 +11,20 @@ import SocialIcon from '../components/SocialIcon.astro';
     <div class="container stories-inner">
       <p class="eyebrow">Muestra de escritura</p>
       <h1>Relatos cortos</h1>
-      <div class="stories-space" aria-label="Espacio reservado para relatos cortos"></div>
+      <article class="story-card">
+        <div>
+          <p class="story-kicker">Relato</p>
+          <h2>El Flaco Facundo: “Un Frío Feriante”</h2>
+          <p class="story-excerpt">
+            En 1971 nació el sexto hijo de un matrimonio pobre. Lo llamaron Facundo.
+            Creció entre el basural, el trabajo, la violencia y la promesa siempre postergada
+            de construir una vida distinta.
+          </p>
+        </div>
+        <a class="button secondary" href={`${import.meta.env.BASE_URL}relatos/el-flaco-facundo/`}>
+          Leer relato
+        </a>
+      </article>
     </div>
   </section>
 
@@ -92,13 +105,44 @@ import SocialIcon from '../components/SocialIcon.astro';
     font-size: clamp(3rem, 5vw, 5rem);
   }
 
-  .stories-space {
+  .story-card {
     min-height: clamp(280px, 42vh, 430px);
+    display: grid;
+    gap: 2rem;
+    align-items: end;
+    padding: clamp(1.6rem, 4vw, 3rem);
     border: 1px solid rgba(79,169,209,.28);
     border-radius: var(--radius);
     background:
-      linear-gradient(145deg, rgba(255,255,255,.02), transparent 55%),
-      rgba(8,25,35,.46);
+      linear-gradient(145deg, rgba(255,255,255,.025), transparent 55%),
+      rgba(8,25,35,.58);
+  }
+
+  .story-card h2 {
+    max-width: 18ch;
+    margin-bottom: 1rem;
+    font-size: clamp(2rem, 3.5vw, 3.5rem);
+  }
+
+  .story-kicker {
+    margin: 0 0 .45rem;
+    color: var(--color-water-bright);
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+  }
+
+  .story-excerpt {
+    max-width: 56ch;
+    margin: 0;
+    color: var(--color-muted);
+    font-size: clamp(1rem, 1.3vw, 1.14rem);
+    line-height: 1.6;
+  }
+
+  .story-card .button {
+    width: fit-content;
   }
 
   .activity-page {
