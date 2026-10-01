@@ -71,10 +71,10 @@ import SocialIcon from '../components/SocialIcon.astro';
 
       <div class="contact-links">
         <a href={site.contact.instagramUrl} target="_blank" rel="noopener noreferrer">
-          Instagram <span>{site.contact.instagramHandle}</span>
+          <SocialIcon label="Instagram" /> Instagram <span>{site.contact.instagramHandle}</span>
         </a>
         <a href={site.contact.facebookUrl} target="_blank" rel="noopener noreferrer">
-          Facebook
+          <SocialIcon label="Facebook" /> Facebook
         </a>
         <a href={`mailto:${site.contact.email}`}>
           Correo <span>{site.contact.email}</span>
@@ -259,6 +259,9 @@ import SocialIcon from '../components/SocialIcon.astro';
   }
 
   .contact-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: .42rem;
     color: var(--color-cream);
     text-decoration: none;
     font-weight: 700;
