@@ -1,4 +1,5 @@
 ---
+import Analytics from './Analytics.astro';
 import { site } from '../content/site';
 import { personSchema, websiteSchema } from '../core/schema';
 
@@ -70,3 +71,5 @@ const structuredData = {
 <meta name="theme-color" content="#03080d" />
 
 <script type="application/ld+json" set:html={JSON.stringify(structuredData).replace(/</g, '\\u003c')} />
+
+<Analytics />

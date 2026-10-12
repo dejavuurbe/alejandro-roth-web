@@ -44,3 +44,20 @@ Sin variables se conserva la URL actual de GitHub Pages. La configuración alime
 ## Flujo
 
 Los cambios se prueban primero en ramas de desarrollo. La versión estable se incorpora a `main` después de validación.
+
+## Medición desde el inicio
+
+- Cuenta GA4: Brian Flores (404973477).
+- Propiedad exclusiva: Alejandro Roth — Web de autor (558622094).
+- Fecha de activación: 12 de octubre de 2026.
+- Flujo web: Alejandro Roth — sitio web (16114635447).
+- ID de medición: G-W6RSS7P3NX.
+- Zona horaria: Buenos Aires; moneda de referencia: USD.
+- La recopilación comienza con la publicación de la etiqueta; no existe historial retroactivo.
+- page_view se emite tras cada navegación de Astro, con control de duplicados.
+- Eventos: click_buy_digital, click_order_physical, click_read_story, click_activity_post y click_external_link.
+- Los clics al pago o a WhatsApp son interés de compra, no ventas confirmadas.
+- No se envían parámetros arbitrarios de URL ni texto de mensajes de WhatsApp.
+- Publicidad y Google Signals deshabilitados. Medición mejorada: historial, clics salientes, búsquedas y formularios desactivados; se usan los eventos explícitos.
+- La misma propiedad debe conservarse cuando se conecte el dominio final, actualizando la URL del flujo.
+- Los informes al cliente son un servicio posterior; la recopilación funciona desde la activación.

@@ -1,0 +1,100 @@
+---
+const measurementId = 'G-W6RSS7P3NX';
+const basePath = import.meta.env.BASE_URL;
+---
+<script is:inline data-astro-rerun define:vars={{ measurementId, basePath }}>
+  (() => {
+    if (window.__rothAnalyticsInstalled || !/^G-[A-Z0-9]+$/.test(measurementId)) return;
+    if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') return;
+    window.__rothAnalyticsInstalled = true;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+
+    function cleanUrl(value) {
+      try {
+        const url = new URL(value, location.origin);
+        return url.origin + url.pathname;
+      } catch { return ''; }
+    }
+
+    // Collect site statistics; advertising features remain disabled.
+    gtag('consent', 'default', {
+      analytics_storage: 'granted',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+    });
+    gtag('js', new Date());
+    gtag('config', measurementId, {
+      send_page_view: false,
+      page_location: cleanUrl(location.href),
+      page_referrer: document.referrer ? cleanUrl(document.referrer) : '',
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false,
+      cookie_path: basePath,
+    });
+
+    const tag = document.createElement('script');
+    tag.async = true;
+    tag.src = 'https://www.googletagmanager.com/gtag/js?id=' + measurementId;
+    document.head.appendChild(tag);
+
+    let lastPage = '';
+    let previousPage = document.referrer ? cleanUrl(document.referrer) : '';
+    function trackPage() {
+      const page = cleanUrl(location.href);
+      if (page === lastPage) return;
+      const params = {
+        send_to: measurementId,
+        page_location: page,
+        page_title: document.title,
+        page_referrer: previousPage,
+      };
+      // Explicit campaign tags only; arbitrary URL query strings are not sent.
+      const query = new URLSearchParams(location.search);
+      for (const [utm, field] of [
+        ['utm_source', 'campaign_source'], ['utm_medium', 'campaign_medium'],
+        ['utm_campaign', 'campaign_name'], ['utm_id', 'campaign_id'],
+        ['utm_content', 'campaign_content'], ['utm_term', 'campaign_term'],
+      ]) {
+        const value = query.get(utm);
+        if (value && /^[\p{L}\p{N} _.-]{1,100}$/u.test(value)) params[field] = value;
+      }
+      gtag('set', { page_location: page, page_title: document.title });
+      gtag('event', 'page_view', params);
+      lastPage = page;
+      previousPage = page;
+    }
+
+    // Astro uses client navigation: count each page once after it has rendered.
+    document.addEventListener('astro:page-load', trackPage);
+    document.addEventListener('DOMContentLoaded', trackPage, { once: true });
+    if (document.readyState !== 'loading') trackPage();
+
+    document.addEventListener('click', (event) => {
+      const link = event.target instanceof Element ? event.target.closest('a[href]') : null;
+      if (!link) return;
+      const url = new URL(link.href, location.href);
+      let name = '';
+      let format = '';
+      if (url.hostname === 'pay.hotmart.com') {
+        name = 'click_buy_digital'; format = 'digital';
+      } else if (url.hostname === 'wa.me') {
+        name = 'click_order_physical'; format = 'physical';
+      } else if (url.origin === location.origin && url.pathname.includes('/relatos/')) {
+        name = 'click_read_story';
+      } else if (link.classList.contains('source-link')) {
+        name = 'click_activity_post';
+      } else if (url.origin !== location.origin && ['https:', 'http:'].includes(url.protocol)) {
+        name = 'click_external_link';
+      }
+      if (!name) return;
+      gtag('event', name, {
+        send_to: measurementId,
+        page_location: cleanUrl(location.href),
+        link_url: cleanUrl(url.href),
+        ...(format ? { book_format: format } : {}),
+      });
+    });
+  })();
+</script>
