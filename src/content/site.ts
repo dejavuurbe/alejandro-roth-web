@@ -41,7 +41,7 @@ export const site = {
     foreword: 'Gina Laura Cundari',
     design: 'Laura Inés Fleitas',
     // Reemplazar solo este valor cuando Alejandro comparta su enlace definitivo pay.hotmart.com.
-    hotmartCheckoutUrl: '',
+    hotmartCheckoutUrl: 'https://pay.hotmart.com/K107870178D',
     buyLabel: 'Comprar edición digital',
   },
   contact: {
