@@ -10,8 +10,6 @@ const bookMeta = [
   ['Clasificación', site.featuredBook.genre],
   ['Formato impreso', '20 × 14 cm'],
 ];
-const hotmartUrl = site.featuredBook.hotmartCheckoutUrl;
-const isHotmartUrl = /^https:\/\/pay\.hotmart\.com\//.test(hotmartUrl);
 const bioParts = site.author.longBio.split(/(incoherente)/gi);
 ---
 <BaseLayout
@@ -89,20 +87,9 @@ const bioParts = site.author.longBio.split(/(incoherente)/gi);
         )}
 
         <div class="purchase">
-          {isHotmartUrl ? (
-            <a
-              class="button"
-              href={hotmartUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {site.featuredBook.buyLabel || 'Adquirí tu ejemplar'}
-            </a>
-          ) : (
-            <a class="button" href={`${import.meta.env.BASE_URL}enigma/`}>
-              Quiero mi ejemplar
-            </a>
-          )}
+          <a class="button" href={`${import.meta.env.BASE_URL}enigma/`}>
+            Quiero mi ejemplar
+          </a>
         </div>
         <p class="book-credits">
           <span>Edición de autor</span>
