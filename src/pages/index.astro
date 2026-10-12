@@ -10,6 +10,8 @@ const bookMeta = [
   ['Clasificación', site.featuredBook.genre],
   ['Formato impreso', '20 × 14 cm'],
 ];
+const whatsappUrl = 'https://wa.me/541154149673?text=Hola%20Alejandro%2C%20quiero%20pedir%20el%20libro%20f%C3%ADsico%20de%20Enigma.%20%C2%BFMe%20indic%C3%A1s%20el%20precio%20y%20las%20opciones%20de%20entrega%3F';
+const hotmartUrl = site.featuredBook.hotmartCheckoutUrl;
 const bioParts = site.author.longBio.split(/(incoherente)/gi);
 ---
 <BaseLayout
@@ -87,8 +89,11 @@ const bioParts = site.author.longBio.split(/(incoherente)/gi);
         )}
 
         <div class="purchase">
-          <a class="button" href={`${import.meta.env.BASE_URL}enigma/`}>
-            Quiero mi ejemplar
+          <a class="button secondary" href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+            Pedir libro físico por WhatsApp
+          </a>
+          <a class="button" href={hotmartUrl} target="_blank" rel="noopener noreferrer">
+            Comprar libro digital
           </a>
         </div>
         <p class="book-credits">
@@ -383,7 +388,20 @@ const bioParts = site.author.longBio.split(/(incoherente)/gi);
   }
 
   .purchase {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
     margin-top: .5rem;
+  }
+
+  .purchase .button {
+    text-align: center;
+  }
+
+  @media (max-width: 640px) {
+    .purchase .button {
+      width: 100%;
+    }
   }
 
   .purchase-pending {
