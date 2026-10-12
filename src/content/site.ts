@@ -73,10 +73,10 @@ export const site = {
     },
     {
       title: 'Presentación de Enigma',
-      source: 'Feria del Libro · La Matanza',
+      source: 'XIX Feria del Libro · La Matanza',
       url: 'https://www.facebook.com/share/19r1EaSvBx/',
       description:
-        'Alejandro Roth presentó Enigma en el Auditorio Luis Alberto Spinetta, junto al colectivo Autores de La Matanza, en el marco de la Feria del Libro de La Matanza, celebrada en San Justo.',
+        'Alejandro Roth presentó Enigma en el Auditorio Luis Alberto Spinetta, junto al colectivo Autores de La Matanza, en el marco de la XIX Feria del Libro de La Matanza, celebrada en San Justo.',
     },
   ],
 };
