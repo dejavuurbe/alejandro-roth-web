@@ -2,13 +2,13 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { site } from '../content/site';
 
-const whatsappUrl = 'https://wa.me/541154149673?text=Hola%20Alejandro%2C%20quiero%20tener%20mi%20ejemplar%20de%20Enigma.';
+const whatsappUrl = 'https://wa.me/541154149673?text=Hola%20Alejandro%2C%20quiero%20pedir%20el%20libro%20f%C3%ADsico%20de%20Enigma.%20%C2%BFMe%20indic%C3%A1s%20el%20precio%20y%20las%20opciones%20de%20entrega%3F';
 const hotmartUrl = site.featuredBook.hotmartCheckoutUrl;
 const isHotmartUrl = /^https:\/\/pay\.hotmart\.com\//.test(hotmartUrl);
 ---
 <BaseLayout
-  title="Quiero mi ejemplar de Enigma | Alejandro Roth"
-  description="Contacto directo con Alejandro Roth para solicitar un ejemplar de Enigma: Relato de un amor incoherente."
+  title="Enigma en libro físico o digital | Alejandro Roth"
+  description="Pedí el libro físico de Enigma por WhatsApp o comprá la edición digital en Hotmart."
 >
   <section class="section order-page">
     <div class="container order-grid">
@@ -25,24 +25,24 @@ const isHotmartUrl = /^https:\/\/pay\.hotmart\.com\//.test(hotmartUrl);
 
       <div class="order-copy">
         <p class="eyebrow">Gracias por llegar hasta acá</p>
-        <h1>Tu ejemplar de <span>Enigma</span> está a un mensaje de distancia.</h1>
+        <h1>Elegí cómo leer <span>Enigma</span>.</h1>
 
         <p class="lead">
-          Si querés tener tu propio ejemplar de <strong>Enigma: Relato de un amor <span class="incoherente-hover">incoherente</span></strong>,
-          contactá directamente a Alejandro por WhatsApp.
+          Para pedir el <strong>libro físico</strong>, consultá el precio y coordiná la entrega con Alejandro por WhatsApp.
+          Para comprar el <strong>libro digital (eBook)</strong>, accedé al pago en Hotmart.
         </p>
 
         <a class="button whatsapp-button" href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-          Pedir Enigma por WhatsApp
+          Pedir libro físico por WhatsApp
         </a>
 
         {isHotmartUrl ? (
           <a class="button digital-button" href={hotmartUrl} target="_blank" rel="noopener noreferrer">
-            Quiero mi copia digital
+            Comprar libro digital
           </a>
         ) : (
           <span class="button digital-button digital-preview" aria-disabled="true">
-            Quiero mi copia digital
+            Comprar libro digital
           </span>
         )}
       </div>
