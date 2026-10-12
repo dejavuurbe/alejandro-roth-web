@@ -69,7 +69,7 @@ export const site = {
       source: 'Biblioteca Popular Almafuerte · Rafael Castillo',
       url: 'https://www.instagram.com/p/DcWUEv3vygW/',
       description:
-        'Presentación de la novela en la Biblioteca Popular Almafuerte de Rafael Castillo. La publicación de la actividad funciona como fuente del registro.',
+        'Presentación de la novela en la Biblioteca Popular Almafuerte de Rafael Castillo.',
     },
     {
       title: 'Actividad literaria local',

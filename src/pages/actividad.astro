@@ -5,7 +5,7 @@ import SocialIcon from '../components/SocialIcon.astro';
 ---
 <BaseLayout
   title="Alejandro Roth, escritor argentino de Rafael Castillo | Actividad"
-  description="Recorrido público y fuente documentada de Alejandro Roth, escritor argentino de Rafael Castillo y autor de Enigma: Relato de un amor incoherente."
+  description="Relatos y actividad literaria de Alejandro Roth, escritor argentino de Rafael Castillo y autor de Enigma: Relato de un amor incoherente."
 >
   <section class="section stories-page" id="relatos">
     <div class="container stories-inner">
@@ -36,7 +36,7 @@ import SocialIcon from '../components/SocialIcon.astro';
           <h1>Presentaciones y recorrido público</h1>
         </div>
         <p class="lead">
-          Tres referencias del recorrido público de Alejandro Roth y su primera novela en el oeste del Gran Buenos Aires.
+          Presentaciones de Enigma y participación de Alejandro Roth en la vida literaria del oeste del Gran Buenos Aires.
         </p>
       </div>
 
@@ -49,16 +49,13 @@ import SocialIcon from '../components/SocialIcon.astro';
             <p>{item.description}</p>
             {item.url && (
               <a class="source-link" href={item.url} target="_blank" rel="noopener noreferrer">
-                <SocialIcon label="Instagram" /> Ver fuente de la actividad →
+                <SocialIcon label="Instagram" /> Ver publicación →
               </a>
             )}
           </article>
         ))}
       </div>
 
-      <p class="additional-activity">
-        También confirmados para incorporar: {site.additionalActivity.join(' · ')}. La documentación específica está pendiente de sumar.
-      </p>
     </div>
   </section>
 
