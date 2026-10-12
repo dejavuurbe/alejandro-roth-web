@@ -61,3 +61,6 @@ Los cambios se prueban primero en ramas de desarrollo. La versión estable se in
 - Publicidad y Google Signals deshabilitados. Medición mejorada: historial, clics salientes, búsquedas y formularios desactivados; se usan los eventos explícitos.
 - La misma propiedad debe conservarse cuando se conecte el dominio final, actualizando la URL del flujo.
 - Los informes al cliente son un servicio posterior; la recopilación funciona desde la activación.
+
+- Conservación configurada: 14 meses para eventos detallados y datos de usuario; los informes agregados siguen su política propia.
+- Prueba de recepción confirmada en tiempo real: 1 usuario técnico, 3 page_view (Inicio, Actividad y relato) y 1 click_read_story. Son pruebas de instalación, no audiencia ni ventas reales.
