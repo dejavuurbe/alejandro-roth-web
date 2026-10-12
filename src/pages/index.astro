@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { site } from '../content/site';
-import { personSchema, bookSchema } from '../core/schema';
+import { bookSchema } from '../core/schema';
 
 const bookMeta = [
   ['Primera edición', site.featuredBook.year],
@@ -17,7 +17,7 @@ const bioParts = site.author.longBio.split(/(incoherente)/gi);
 <BaseLayout
   title="Alejandro Roth, escritor argentino de Rafael Castillo | Enigma"
   description={site.description}
-  schema={[personSchema(), bookSchema()]}
+  schema={[bookSchema()]}
 >
   <section class="hero section" id="inicio">
     <img class="cover-ghost" src={site.featuredBook.cover} alt="" aria-hidden="true" />

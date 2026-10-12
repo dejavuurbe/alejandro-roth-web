@@ -1,3 +1,5 @@
+import { siteUrl } from '../core/urls';
+
 const base = import.meta.env.BASE_URL;
 
 export const site = {
@@ -6,7 +8,7 @@ export const site = {
   tagline: 'Autor de «Enigma: Relato de un amor incoherente».',
   description:
     'Alejandro Roth, escritor argentino de Rafael Castillo, Buenos Aires, y autor de Enigma: Relato de un amor incoherente, su primera obra publicada.',
-  url: 'https://dejavuurbe.github.io/alejandro-roth-web',
+  url: siteUrl,
   location: 'Rafael Castillo, Buenos Aires, Argentina',
   footerLine: 'Escritor argentino · Autor de Enigma · Rafael Castillo, Buenos Aires, Argentina',
   credit: {

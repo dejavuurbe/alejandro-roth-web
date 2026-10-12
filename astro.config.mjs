@@ -1,11 +1,12 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
-const site = process.env.SITE_URL || 'https://dejavuurbe.github.io/alejandro-roth-web';
-const base = process.env.BASE_PATH || '/alejandro-roth-web';
+// SITE_URL may include a subdirectory. A custom domain at its root needs no BASE_PATH.
+const configuredUrl = new URL(process.env.SITE_URL || 'https://dejavuurbe.github.io/alejandro-roth-web');
+const base = process.env.BASE_PATH || configuredUrl.pathname;
 
 export default defineConfig({
-  site,
+  site: configuredUrl.origin,
   base,
   output: 'static',
   trailingSlash: 'always',
@@ -13,5 +14,5 @@ export default defineConfig({
     prefetchAll: true,
     defaultStrategy: 'viewport',
   },
-  integrations: [sitemap()],
+  integrations: [sitemap({ filter: (url) => !url.endsWith('/404/') })],
 });
