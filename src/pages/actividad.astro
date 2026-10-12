@@ -49,7 +49,7 @@ import SocialIcon from '../components/SocialIcon.astro';
             <p>{item.description}</p>
             {item.url && (
               <a class="source-link" href={item.url} target="_blank" rel="noopener noreferrer">
-                <SocialIcon label="Instagram" /> Ver publicación →
+                <SocialIcon label={new URL(item.url).hostname.endsWith('facebook.com') ? 'Facebook' : 'Instagram'} /> Ver publicación →
               </a>
             )}
           </article>
