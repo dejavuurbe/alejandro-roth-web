@@ -72,11 +72,11 @@ export const site = {
         'Presentación de la novela en la Biblioteca Popular Almafuerte de Rafael Castillo.',
     },
     {
-      title: 'Actividad literaria local',
-      source: 'Autores de La Matanza',
-      url: '',
+      title: 'Presentación de Enigma',
+      source: 'Feria del Libro · La Matanza',
+      url: 'https://www.facebook.com/share/19r1EaSvBx/',
       description:
-        'Participación de Alejandro Roth en el circuito de autores y actividades literarias de La Matanza.',
+        'Alejandro Roth presentó Enigma en el Auditorio Luis Alberto Spinetta, junto al colectivo Autores de La Matanza, en el marco de la Feria del Libro de La Matanza, celebrada en San Justo.',
     },
   ],
 };
