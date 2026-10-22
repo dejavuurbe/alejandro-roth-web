@@ -28,6 +28,7 @@
 ## Notas
 - El despliegue usa GitHub Actions: según la documentación de GitHub, un archivo `CNAME` en la rama es **ignorado** en este modo. El dominio se define en **Settings → Pages**, no mediante un CNAME de archivos.
 - El registro DNS `www` apunta a `dejavuurbe.github.io`, no a una URL con ruta.
+- Configuración confirmada visualmente en GitHub el 22/10/2026: variables de repositorio `SITE_URL=https://www.alejandroroth.com.ar` y `BASE_PATH=/`. Un commit en `main` inicia el workflow de publicación con estos valores. No confundir resultado del build con propagación DNS o HTTPS.
 - NIC Argentina gestiona el registro y delegación; los registros A y CNAME se modifican donde estén alojados los DNS autoritativos. No asumir que están en Cloudflare sin revisar delegación.
 - Cambiar `SITE_URL` y `BASE_PATH` a la raíz modifica las rutas de la compilación: coordinarlo con la configuración de Pages y DNS, no hacer el cambio mientras la web de prueba siga siendo el único acceso estable.
 - Fuente: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site
