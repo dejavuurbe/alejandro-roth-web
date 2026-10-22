@@ -77,7 +77,7 @@ No incorporar actividades nuevas como definitivas sin fuente o material verifica
 
 ## 7. SEO / AEO
 
-- Dominio: pendiente.
+- Dominio informado (22/10/2026): **www.alejandroroth.com.ar**. Delegación, asociación en GitHub Pages y HTTPS aún sin confirmar.
 - Título principal: Alejandro Roth | Escritor.
 - Descripción: sitio oficial de Alejandro Roth, autor de *Enigma. Relato de un amor incoherente*.
 - Consultas prioritarias: `Alejandro Roth escritor`, `Alejandro Roth Enigma`, `Enigma Relato de un amor incoherente`.
@@ -87,7 +87,7 @@ No incorporar actividades nuevas como definitivas sin fuente o material verifica
 
 ## 8. Pendientes de confirmación
 
-- Dominio o dirección web definitiva.
+- Verificar delegación y DNS de `www.alejandroroth.com.ar`, vinculación en GitHub Pages, certificado HTTPS y redirección desde el dominio sin `www`.
 - Confirmación explícita de quién otorga la aprobación final del sitio.
 - Acceso o documentación de Feria del Libro, antología y demás actividades que Alejandro quiere sumar.
 - Definición de si finalmente se publicará un fragmento de los capítulos 1 o 10.
@@ -99,7 +99,7 @@ No incorporar actividades nuevas como definitivas sin fuente o material verifica
 - Repositorio: `dejavuurbe/alejandro-roth-web`.
 - Rama estable actual: `main`.
 - Hosting de prueba: GitHub Pages.
-- Dominio final: pendiente.
+- Dominio final informado: **https://www.alejandroroth.com.ar/**. Conexión pendiente de verificación; procedimiento en `DOMINIO.md`.
 - Analytics / Search Console: pendiente.
 - Fecha de publicación oficial: pendiente.
 - Antes de retirar `noindex`, Alejandro debe revisar nombres, textos, enlaces, imágenes y créditos.
