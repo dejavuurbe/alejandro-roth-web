@@ -22,7 +22,7 @@ El encabezado queda reducido a la marca/nombre del autor, **Actividad** y **Cont
 - Biografía completa: pendiente de material definitivo.
 - Sinopsis oficial: pendiente.
 - Fotografía y portada: incorporadas.
-- Dominio final: pendiente.
+- Dominio informado: **www.alejandroroth.com.ar** (vinculación Pages/DNS/HTTPS pendiente de verificación; guía en `DOMINIO.md`).
 - Sitio mantenido en noindex durante la prueba.
 
 ## Lectura por buscadores e IA
@@ -34,6 +34,8 @@ El encabezado queda reducido a la marca/nombre del autor, **Actividad** y **Cont
 - Todas las páginas mantienen `noindex,nofollow` hasta aprobación final.
 
 ### Preparación del dominio
+
+La dirección principal elegida es `https://www.alejandroroth.com.ar/` y la variante sin `www` deberá redirigir hacia ella. El procedimiento exacto de vinculación, DNS, variables, publicación y control de calidad está en [DOMINIO.md](DOMINIO.md).
 
 La publicación admite variables de repositorio en GitHub Actions:
 - `SITE_URL`: URL final del sitio, por ejemplo `https://dominio-del-autor.com.ar`.
