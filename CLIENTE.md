@@ -87,7 +87,7 @@ No incorporar actividades nuevas como definitivas sin fuente o material verifica
 
 ## 8. Pendientes de confirmación
 
-- Verificar delegación y DNS de `www.alejandroroth.com.ar`, vinculación en GitHub Pages, certificado HTTPS y redirección desde el dominio sin `www`.
+- NIC Argentina muestra el dominio `alejandroroth.com.ar` como **Registrado** y **Delegado: Sí** (captura del 22/10/2026); alta 21/10/2026 y vencimiento 21/10/2027. Servidores delegados: `nick.ns.cloudflare.com` y `samara.ns.cloudflare.com`, según la configuración cargada en NIC. **Pendiente**: confirmar activación de la zona en Cloudflare, validación DNS en GitHub Pages, HTTPS y redirección desde el dominio sin `www`.
 - Confirmación explícita de quién otorga la aprobación final del sitio.
 - Acceso o documentación de Feria del Libro, antología y demás actividades que Alejandro quiere sumar.
 - Definición de si finalmente se publicará un fragmento de los capítulos 1 o 10.
