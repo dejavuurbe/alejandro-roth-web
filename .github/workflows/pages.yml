@@ -18,6 +18,7 @@ concurrency:
 env:
   SITE_URL: ${{ vars.SITE_URL }}
   BASE_PATH: ${{ vars.BASE_PATH }}
+  PUBLIC_SITE_LIVE: ${{ vars.PUBLIC_SITE_LIVE }}
 
 jobs:
   build:
@@ -36,6 +37,9 @@ jobs:
 
       - name: Generar sitio
         run: npm run build
+
+      - name: Verificar SEO, IA y Analytics en la compilación
+        run: node scripts/check-discovery.mjs
 
       - name: Configurar Pages
         uses: actions/configure-pages@v5

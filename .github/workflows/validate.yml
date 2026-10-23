@@ -8,6 +8,11 @@ on:
     branches:
       - main
 
+env:
+  SITE_URL: ${{ vars.SITE_URL }}
+  BASE_PATH: ${{ vars.BASE_PATH }}
+  PUBLIC_SITE_LIVE: ${{ vars.PUBLIC_SITE_LIVE }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -25,3 +30,13 @@ jobs:
 
       - name: Generar sitio
         run: npm run build
+
+      - name: Revisar rastreo, sitemap, schema y analítica
+        run: node scripts/check-discovery.mjs
+
+      - name: Ensayar configuracion de publicacion
+        env:
+          PUBLIC_SITE_LIVE: "true"
+        run: |
+          npm run build
+          node scripts/check-discovery.mjs

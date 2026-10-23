@@ -83,12 +83,12 @@ No incorporar actividades nuevas como definitivas sin fuente o material verifica
 - Consultas prioritarias: `Alejandro Roth escritor`, `Alejandro Roth Enigma`, `Enigma Relato de un amor incoherente`.
 - Entidad a desambiguar: Alejandro Roth autor de *Enigma*, diferenciándolo de homónimos.
 - Schema: Person / Book / FAQPage.
-- Mantener el sitio en `noindex,nofollow` hasta aprobación final y publicación oficial.
+- Indexación bloqueada de forma predeterminada; el interruptor técnico `PUBLIC_SITE_LIVE=true` permitirá, tras dominio/HTTPS y autorización, abrir conjuntamente HTML y robots.txt. Protocolo en `AUDITORIA_BUSQUEDA_MEDICION.md`.
 
 ## 8. Pendientes de confirmación
 
 - NIC Argentina muestra el dominio `alejandroroth.com.ar` como **Registrado** y **Delegado: Sí** (captura del 22/10/2026); alta 21/10/2026 y vencimiento 21/10/2027. Servidores delegados: `nick.ns.cloudflare.com` y `samara.ns.cloudflare.com`, según la configuración cargada en NIC. **Pendiente**: confirmar activación de la zona en Cloudflare, validación DNS en GitHub Pages, HTTPS y redirección desde el dominio sin `www`.
-- Confirmación explícita de quién otorga la aprobación final del sitio.
+- Alejandro manifestó conformidad general con la página, según Brian (22/10/2026). Falta confirmar autorización de lanzamiento e indexación pública cuando el dominio funcione.
 - Acceso o documentación de Feria del Libro, antología y demás actividades que Alejandro quiere sumar.
 - Definición de si finalmente se publicará un fragmento de los capítulos 1 o 10.
 - Confirmación final de biografía y sinopsis de contratapa una vez transcritas o incorporadas.
@@ -100,6 +100,6 @@ No incorporar actividades nuevas como definitivas sin fuente o material verifica
 - Rama estable actual: `main`.
 - Hosting de prueba: GitHub Pages.
 - Dominio final informado: **https://www.alejandroroth.com.ar/**. Conexión pendiente de verificación; procedimiento en `DOMINIO.md`.
-- Analytics / Search Console: pendiente.
+- Google Analytics 4 instalado y probado anteriormente (ID en `README.md`), sin informes automáticos al cliente; lectura actual de eventos no verificada. Search Console: pendiente de activar para el nuevo dominio.
 - Fecha de publicación oficial: pendiente.
 - Antes de retirar `noindex`, Alejandro debe revisar nombres, textos, enlaces, imágenes y créditos.

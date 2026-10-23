@@ -27,11 +27,13 @@ El encabezado queda reducido a la marca/nombre del autor, **Actividad** y **Cont
 
 ## Lectura por buscadores e IA
 
+Protocolo de auditoría, variantes de búsqueda, medición y lanzamiento: [AUDITORIA_BUSQUEDA_MEDICION.md](AUDITORIA_BUSQUEDA_MEDICION.md). La apertura de indexación se controla con la variable de GitHub Actions `PUBLIC_SITE_LIVE=true`, que debe activarse solo tras verificar DNS/HTTPS, navegación y aprobación editorial. La validación automatizada revisa ambos modos de construcción, pero no representa indexación garantizada en buscadores.
+
 - Metadatos y JSON-LD: Person, WebSite y WebPage; Book impreso y digital en Inicio.
 - `llms.txt`: generado desde los datos vigentes del autor, libro, actividades y compra.
 - Sitemap: generado automáticamente, excluyendo la página 404.
 - `robots.txt`: referencia el sitemap y mantiene `Disallow: /`.
-- Todas las páginas mantienen `noindex,nofollow` hasta aprobación final.
+- Sin la variable `PUBLIC_SITE_LIVE=true`, las páginas mantienen `noindex,nofollow` y bloqueo de rastreo; la publicación autorizada elimina esos bloqueos de forma coordinada.
 
 ### Preparación del dominio
 
