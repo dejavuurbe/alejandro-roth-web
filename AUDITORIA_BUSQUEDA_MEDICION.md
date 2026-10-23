@@ -25,6 +25,15 @@ Facilitar que las búsquedas relevantes identifiquen al escritor Alejandro Roth,
 - Errores posibles: Alejandro Rot, Alejandro Roht, pero **no publicar estas grafías como supuestos alias reales**. Verificar su rendimiento en el buscador después de la indexación; la corrección ortográfica corresponde al motor de búsqueda.
 - Si aparecen consultas reales nuevas, decidir mejoras de contenido a partir de Search Console, no de variantes inventadas.
 
+## Activación de indexación — 22 de octubre de 2026
+
+- Brian autorizó iniciar la apertura del sitio para producción. Se configuró en `.github/workflows/pages.yml` el valor `PUBLIC_SITE_LIVE: 'true'` (solo en el workflow de despliegue).
+- Commit: `9e8679a7da0aa3c7171a29acc748ade91f38f8e6`. Publicación GitHub Actions: `39882393228`, **completada con éxito**.
+- La compilación comprobó automáticamente la ausencia de `noindex` y la presencia de `Allow: /` en `robots.txt`, más sitemap, canónicas, `llms.txt`, JSON-LD y presencia de etiqueta GA4.
+- Las pruebas de la rama validadora siguen ensayando tanto el modo restringido como el público, sin anular la configuración de despliegue.
+- **Pendiente:** verificar por HTTP real el dominio `www.alejandroroth.com.ar`, Cloudflare activo, certificado HTTPS, redirección del dominio raíz y aceptación de Search Console. No confundir el éxito del workflow con visibilidad pública ni indexación efectiva.
+- Para cerrar nuevamente el rastreo si es necesario, modificar solo la variable del workflow de producción a `PUBLIC_SITE_LIVE: 'false'` y volver a desplegar.
+
 ## Estado de indexación y lanzamiento
 
 El repositorio tiene un interruptor único de publicación: variable **`PUBLIC_SITE_LIVE`** en GitHub Actions.
