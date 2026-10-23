@@ -454,6 +454,13 @@ const bioParts = site.author.longBio.split(/(incoherente)/gi);
   }
 
   @media (min-width: 900px) {
+    /* Misma continuidad azul petróleo que la sección Enigma.
+       Se preserva intacta la apariencia original de teléfonos. */
+    .hero {
+      background:
+        radial-gradient(circle at 22% 50%, rgba(79,169,209,.16), transparent 25rem),
+        linear-gradient(180deg, #071720, #06131c);
+    }
     .hero-grid { grid-template-columns: 1.15fr .85fr; }
     .author-grid { grid-template-columns: .75fr 1.25fr; }
 
