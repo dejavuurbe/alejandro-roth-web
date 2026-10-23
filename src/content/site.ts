@@ -14,7 +14,7 @@ export const site = {
   credit: {
     enabled: true,
     label: 'Diseño y desarrollo web por',
-    url: 'https://dejavuurbe.github.io/pierre-menard-web/proyecto/',
+    url: 'mailto:briandejavu07@gmail.com?subject=Consulta%20sobre%20una%20web%20para%20autores',
   },
   author: {
     birthDate: '1981',
