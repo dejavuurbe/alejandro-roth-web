@@ -63,4 +63,16 @@ const base = import.meta.env.BASE_URL;
   nav a:hover { color: var(--color-cream); }
   nav a:hover::after { right: 0; }
   .brand:hover { color: var(--color-water-bright); }
+
+  @media (max-width: 640px) {
+    .inner {
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      flex-shrink: 0;
+      max-width: 100%;
+      overflow-wrap: anywhere;
+    }
+  }
 </style>
