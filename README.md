@@ -23,7 +23,7 @@ El encabezado queda reducido a la marca/nombre del autor, **Actividad** y **Cont
 - Sinopsis oficial: pendiente.
 - Fotografía y portada: incorporadas.
 - Dominio informado: **www.alejandroroth.com.ar** (vinculación Pages/DNS/HTTPS pendiente de verificación; guía en `DOMINIO.md`).
-- Sitio mantenido en noindex durante la prueba.
+- Indexación pública habilitada por el workflow de producción el 22/10/2026 (GitHub Actions verificado); DNS/HTTPS y aparición en buscadores aún pendientes de comprobación.
 
 ## Lectura por buscadores e IA
 
@@ -33,7 +33,7 @@ Protocolo de auditoría, variantes de búsqueda, medición y lanzamiento: [AUDIT
 - `llms.txt`: generado desde los datos vigentes del autor, libro, actividades y compra.
 - Sitemap: generado automáticamente, excluyendo la página 404.
 - `robots.txt`: referencia el sitemap y mantiene `Disallow: /`.
-- Sin la variable `PUBLIC_SITE_LIVE=true`, las páginas mantienen `noindex,nofollow` y bloqueo de rastreo; la publicación autorizada elimina esos bloqueos de forma coordinada.
+- El workflow de publicación fija `PUBLIC_SITE_LIVE=true` desde el 22/10/2026 para retirar coordinadamente `noindex,nofollow` y el bloqueo de rastreo; los workflows de pruebas validan ambos modos. La variable se revisa en `.github/workflows/pages.yml`.
 
 ### Preparación del dominio
 
