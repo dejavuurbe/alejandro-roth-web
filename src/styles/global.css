@@ -183,3 +183,20 @@ p { margin-top: 0; }
   .container { width: min(calc(100% - 1.5rem), var(--max-width)); }
   .section { padding: 3.5rem 0; }
 }
+
+/* Estilo compartido de la palabra distintiva del subtítulo de Enigma. */
+.incoherente-highlight {
+  display: inline-block;
+  color: var(--color-accent);
+  font-family: var(--font-accent);
+  font-size: 1.3em;
+  font-style: normal;
+  font-weight: 600;
+  transform-origin: center;
+  transition: transform .2s ease, text-shadow .2s ease;
+}
+
+.incoherente-highlight:hover {
+  transform: translateY(-2px) scale(1.09);
+  text-shadow: 0 0 16px rgba(216,52,42,.42);
+}

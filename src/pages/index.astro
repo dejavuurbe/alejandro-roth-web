@@ -31,7 +31,7 @@ const bioParts = site.author.longBio.split(/(incoherente)/gi);
         <p class="lead hero-lead">
           Autor de <span class="book-name">Enigma</span>.
           <span class="cream">Relato de un amor</span>
-          <span class="red incoherente-hover">incoherente</span>.
+          <span class="incoherente-highlight">incoherente</span>.
         </p>
         <div class="actions">
           <a class="button secondary" href="#obra">Conocer Enigma</a>
@@ -72,7 +72,7 @@ const bioParts = site.author.longBio.split(/(incoherente)/gi);
         <h2 class="enigma-title">{site.featuredBook.title}</h2>
         <p class="subtitle">
           <span class="subtitle-main">Relato de un amor</span>
-          <span class="subtitle-accent incoherente-hover">incoherente</span>
+          <span class="incoherente-highlight">incoherente</span>
         </p>
         <p class="book-hook">{site.featuredBook.hook}</p>
         <p class="lead">{site.featuredBook.synopsis}</p>
@@ -115,7 +115,7 @@ const bioParts = site.author.longBio.split(/(incoherente)/gi);
         <p class="lead">
           {bioParts.map((part) =>
             part.toLowerCase() === 'incoherente'
-              ? <span class="incoherente-hover">{part}</span>
+              ? <span class="incoherente-highlight">{part}</span>
               : part
           )}
         </p>
@@ -196,24 +196,6 @@ const bioParts = site.author.longBio.split(/(incoherente)/gi);
   }
 
   .cream { color: var(--color-cream); }
-
-  .red {
-    color: var(--color-accent);
-    font-family: var(--font-accent);
-    font-size: 1.3em;
-  }
-
-  .incoherente-hover {
-    display: inline-block;
-    transform-origin: center;
-    transition: transform .2s ease, text-shadow .2s ease, color .2s ease;
-  }
-
-  .incoherente-hover:hover {
-    transform: translateY(-2px) scale(1.09);
-    color: var(--color-accent);
-    text-shadow: 0 0 16px rgba(216,52,42,.42);
-  }
 
   .portrait-stage {
     position: relative;
@@ -332,15 +314,6 @@ const bioParts = site.author.longBio.split(/(incoherente)/gi);
   .subtitle-main {
     font-family: var(--font-display);
     font-size: clamp(.95rem, 1.35vw, 1.18rem);
-  }
-
-  .subtitle-accent {
-    color: var(--color-accent);
-    font-family: var(--font-accent);
-    font-size: clamp(1.18rem, 1.7vw, 1.55rem);
-    font-weight: 600;
-    line-height: 1;
-    transform: rotate(-2deg);
   }
 
   .book-meta {
