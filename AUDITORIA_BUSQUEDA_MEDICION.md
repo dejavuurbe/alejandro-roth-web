@@ -40,7 +40,7 @@ El repositorio tiene un interruptor único de publicación: variable **`PUBLIC_S
 - Ausente o distinto de `true`: mantiene `noindex,nofollow` en HTML y `Disallow: /` en `robots.txt`.
 - Valor `true`: omite la etiqueta de exclusión y publica `Allow: /` junto al sitemap.
 - Los workflows de validación y despliegue leen la variable. La validación genera el sitio y comprueba la salida real: dominio canónico, sitemap, `llms.txt`, datos estructurados y presencia de GA4. Además puede ensayar la compilación pública sin modificar el sitio publicado.
-- **NO habilitar `PUBLIC_SITE_LIVE=true` hasta comprobar DNS, HTTPS, navegación en `www.alejandroroth.com.ar` y aprobación editorial.** Después de modificar la variable, disparar una nueva compilación y revisar el resultado.
+- **Autorización recibida el 22/10/2026:** la compilación para producción ya usa `PUBLIC_SITE_LIVE=true` aunque el DNS todavía esté en propagación; la comprobación de DNS/HTTPS y la aceptación de buscadores siguen pendientes. Habilitar el rastreo no certifica que el dominio sea accesible ni garantiza indexación.
 
 ## Después de activar y revisar el dominio
 
@@ -66,7 +66,7 @@ El repositorio tiene un interruptor único de publicación: variable **`PUBLIC_S
 - [ ] Dominio `www` resuelve y tiene HTTPS válido; raíz redirige a `www`.
 - [ ] Web navegable desde escritorio y móvil; compra y contacto funcionales.
 - [ ] Titular aprueba contenidos y publicación.
-- [ ] `PUBLIC_SITE_LIVE=true` guardado y desplegado; robots abierto y sin noindex.
+- [x] `PUBLIC_SITE_LIVE=true` configurado en workflow y desplegado; test automatizado de robots abierto y ausencia de noindex correcto. Falta verificación HTTP en el dominio.
 - [ ] Sitemap enviado a Search Console y Bing.
 - [ ] GA4 comprueba visita de prueba y evento de clic sin compra.
 - [ ] Aviso de medición y consentimiento apropiado revisados.
