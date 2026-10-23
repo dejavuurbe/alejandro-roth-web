@@ -45,6 +45,11 @@ const structuredData = {
 ---
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<script is:inline data-astro-rerun>
+  // Instagram's WebView enlarges text on some Android devices. Scope its
+  // compact heading to that browser, keeping the approved Chrome scale.
+  document.documentElement.toggleAttribute('data-instagram-browser', /Instagram/i.test(navigator.userAgent));
+</script>
 <meta name="generator" content={Astro.generator} />
 <title>{title}</title>
 <meta name="description" content={description} />
