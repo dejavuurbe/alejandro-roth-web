@@ -7,28 +7,7 @@ import SocialIcon from '../components/SocialIcon.astro';
   title="Alejandro Roth, escritor argentino de Rafael Castillo | Actividad"
   description="Relatos y actividad literaria de Alejandro Roth, escritor argentino de Rafael Castillo y autor de Enigma: Relato de un amor incoherente."
 >
-  <section class="section stories-page" id="relatos">
-    <div class="container stories-inner">
-      <p class="eyebrow">Muestra de escritura</p>
-      <h1>Relatos cortos</h1>
-      <article class="story-card">
-        <div>
-          <p class="story-kicker">Relato</p>
-          <h2>El Flaco Facundo: “Un Frío Feriante”</h2>
-          <p class="story-excerpt">
-            En 1971 nació el sexto hijo de un matrimonio pobre. Lo llamaron Facundo.
-            Creció entre el basural, el trabajo, la violencia y la promesa siempre postergada
-            de construir una vida distinta.
-          </p>
-        </div>
-        <a class="button secondary" href={`${import.meta.env.BASE_URL}relatos/el-flaco-facundo/`}>
-          Leer relato
-        </a>
-      </article>
-    </div>
-  </section>
-
-  <section class="section activity-page">
+  <section class="section activity-page" id="presentaciones">
     <div class="container activity-inner">
       <div class="activity-head">
         <div>
@@ -56,6 +35,27 @@ import SocialIcon from '../components/SocialIcon.astro';
         ))}
       </div>
 
+    </div>
+  </section>
+
+  <section class="section stories-page" id="relatos">
+    <div class="container stories-inner">
+      <p class="eyebrow">Muestra de escritura</p>
+      <h2>Relatos cortos</h2>
+      <article class="story-card">
+        <div>
+          <p class="story-kicker">Relato</p>
+          <h2>El Flaco Facundo: “Un Frío Feriante”</h2>
+          <p class="story-excerpt">
+            En 1971 nació el sexto hijo de un matrimonio pobre. Lo llamaron Facundo.
+            Creció entre el basural, el trabajo, la violencia y la promesa siempre postergada
+            de construir una vida distinta.
+          </p>
+        </div>
+        <a class="button secondary" href={`${import.meta.env.BASE_URL}relatos/el-flaco-facundo/`}>
+          Leer relato
+        </a>
+      </article>
     </div>
   </section>
 
@@ -97,7 +97,7 @@ import SocialIcon from '../components/SocialIcon.astro';
     max-width: 1120px;
   }
 
-  .stories-page h1 {
+  .stories-page h2 {
     margin-bottom: 1.4rem;
     font-size: clamp(3rem, 5vw, 5rem);
   }
