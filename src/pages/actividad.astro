@@ -290,7 +290,7 @@ import SocialIcon from '../components/SocialIcon.astro';
   }
 
   @media (max-width: 640px) {
-    .activity-page h1 {
+    :global(html[data-instagram-browser]) .activity-page h1 {
       font-size: clamp(2rem, 10vw, 3.1rem);
     }
 
