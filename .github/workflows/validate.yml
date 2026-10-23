@@ -33,3 +33,10 @@ jobs:
 
       - name: Revisar rastreo, sitemap, schema y analítica
         run: node scripts/check-discovery.mjs
+
+      - name: Ensayar configuracion de publicacion
+        env:
+          PUBLIC_SITE_LIVE: "true"
+        run: |
+          npm run build
+          node scripts/check-discovery.mjs
