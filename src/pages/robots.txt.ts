@@ -1,8 +1,9 @@
 import type { APIRoute } from 'astro';
 import { absoluteUrl } from '../core/urls';
 
-// Keep preview crawling disabled until the final site is approved.
+// Publication flag is shared by robots and HTML head.
+const publicSiteLive = import.meta.env.PUBLIC_SITE_LIVE === 'true';
 export const GET: APIRoute = () => new Response(
-  'User-agent: *\nDisallow: /\n\nSitemap: ' + absoluteUrl('sitemap-index.xml') + '\n',
+  'User-agent: *\n' + (publicSiteLive ? 'Allow: /\n' : 'Disallow: /\n') + '\nSitemap: ' + absoluteUrl('sitemap-index.xml') + '\n',
   { headers: { 'Content-Type': 'text/plain; charset=utf-8' } },
 );
