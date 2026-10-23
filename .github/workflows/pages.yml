@@ -1,4 +1,4 @@
-name: Publicar sitio de prueba
+name: Publicar web Alejandro Roth
 
 on:
   push:
@@ -18,7 +18,8 @@ concurrency:
 env:
   SITE_URL: ${{ vars.SITE_URL }}
   BASE_PATH: ${{ vars.BASE_PATH }}
-  PUBLIC_SITE_LIVE: ${{ vars.PUBLIC_SITE_LIVE }}
+  # Lanzamiento autorizado el 22/10/2026. Desactivar aquí para restaurar noindex + Disallow.
+  PUBLIC_SITE_LIVE: 'true'
 
 jobs:
   build:
