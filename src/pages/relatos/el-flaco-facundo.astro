@@ -26,6 +26,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <p>“PERDONAME, NONITA”</p>
         <p>Esta es la historia de un hombre solitario, la historia del flaco Facundo, un frío feriante, que cuando las borracheras le estiran la lengua, no hace más que repetir sentado en alguna plaza y con el cartón de vino en la mano, a cuanto joven se le cruce, aun cuando lo ignoran, él balbucea a gritos, una y otra vez elevando en progresivo su tono de voz: “estudie mijo, estudie, que estudiar no pesa más que una pala, estudiar te puede salvar de hacer de tu vida un verdadero infierno”.</p>
       </div>
+      <aside class="continue-reading" aria-labelledby="seguir-leyendo">
+        <p class="eyebrow">Seguí leyendo</p>
+        <h2 id="seguir-leyendo">Conocé <em>Enigma</em></h2>
+        <p>Si te interesó la escritura de Alejandro Roth, descubrí su novela <em>Enigma: Relato de un amor incoherente</em>.</p>
+        <a class="button secondary" href={`${import.meta.env.BASE_URL}#obra`}>Conocer Enigma</a>
+      </aside>
     </div>
   </article>
 </BaseLayout>
@@ -69,5 +75,25 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
   .story-body p {
     margin: 0 0 1.35rem;
+  }
+
+  .continue-reading {
+    margin-top: clamp(3rem, 7vw, 5rem);
+    padding-top: clamp(1.5rem, 4vw, 2.5rem);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .continue-reading h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: .65rem;
+  }
+
+  .continue-reading p:not(.eyebrow) {
+    max-width: 56ch;
+    color: var(--color-muted);
+  }
+
+  .continue-reading .button {
+    margin-top: .4rem;
   }
 </style>
